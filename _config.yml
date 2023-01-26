@@ -2,5 +2,5 @@ remote_theme: pages-themes/cayman@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 title: GRAME, UNE EFFRACTION MUSICALE
-description: A l'occasion des 40 ans de Grame
+description: 550 pages, 350 photos et illustrations, 35 €, Editions Lugdivine
 
