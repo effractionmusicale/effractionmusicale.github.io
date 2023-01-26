@@ -8,7 +8,7 @@ _550 pages, 350 photos et illustration._
 _Editions Lugdivine. 35 euros._
 
 
-<a href="https://docs.google.com/forms/d/e/1FAIpQLScLCjXs3Xj6-VtVk2xyAWq1rQXPHhnaoTciAwInFju_6_AsmA/viewform">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScLCjXs3Xj6-VtVk2xyAWq1rQXPHhnaoTciAwInFju_6_AsmA/viewform" style="text-align:center;">
 <button style="text-align:center; background-color: rgb(90,98,170); color: rgb(240,240,240); height:50px">
 Commander le livre
 </button>
