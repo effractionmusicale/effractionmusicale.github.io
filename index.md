@@ -9,7 +9,7 @@ _Editions Lugdivine. 35 euros._
 
 
 <a href="https://docs.google.com/forms/d/e/1FAIpQLScLCjXs3Xj6-VtVk2xyAWq1rQXPHhnaoTciAwInFju_6_AsmA/viewform" >
-<button style="background-color: rgb(90,98,170); border:none; color: rgb(240,240,240); height:50px; width:200px; margin: 0 auto; display: block;"> 
-Commander le livre
-</button>
+	<button style="background-color: rgb(90,98,170); border:none; color: rgb(240,240,240); height:50px; width:200px; margin: 0 auto; display: block;"> 
+		Commander le livre
+	</button>
 </a>
