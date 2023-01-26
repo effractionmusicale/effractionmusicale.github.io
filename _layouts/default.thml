@@ -35,7 +35,7 @@
           <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
         {% endif %}
         <span class="site-footer-credits">ID Musical, 8 place Saint-Jean, 69005 Lyon; 
-		<a href = "mailto: idee.musical@gmail.com">contact: idee.musical@gmail.com</a>
+		contact: <a href = "mailto: idee.musical@gmail.com">idee.musical@gmail.com</a>
 		</span>
       </footer>
     </main>
