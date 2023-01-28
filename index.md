@@ -9,7 +9,7 @@ _Editions Lugdivine. 35 euros._
 
 
 <a href="./extrait.pdf" >
-	<button style="background-color: rgb(170,90,98); border:none; color: rgb(240,240,240); height:50px; width:200px; margin: 0 auto; display: block; border-radius: 2px;"> 
+	<button style="background-color: rgb(170,90,98); border:none; color: rgb(240,240,240); height:50px; width:200px; margin: 2 auto; display: block; border-radius: 2px;"> 
 		Lire un extrait
 	</button>
 </a>
