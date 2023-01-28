@@ -4,7 +4,7 @@ En quatre actes, une ouverture et un épilogue, suivis de quelques propos et pag
 
 _Auteurs : James Giroudon, Pierre-Alain Jaffrennou, Yann Orlarey._
 _Conseils éditoriaux : Muriel Joubert._
-_550 pages, 350 photos et illustration._
+_550 pages, 350 photos et illustrations._
 _Editions Lugdivine. 35 euros._
 
 
