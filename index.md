@@ -14,7 +14,7 @@ _Editions Lugdivine. 35 euros._
 	</button>
 </a>
 <a href="./communique-presse.pdf" >
-	<button style="background-color: rgb(204,0,204); border:none; color: rgb(240,240,240); height:50px; width:200px; margin-top:30px; margin-bottom:4px; margin-left:auto; margin-right:auto; display: block; border-radius: 2px;"> 
+	<button style="background-color: rgb(157,93,157); border:none; color: rgb(240,240,240); height:50px; width:200px; margin-top:4px; margin-bottom:4px; margin-left:auto; margin-right:auto; display: block; border-radius: 2px;"> 
 		Communiqué de presse
 	</button>
 </a>
