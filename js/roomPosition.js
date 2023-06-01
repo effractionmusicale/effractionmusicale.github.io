@@ -20,7 +20,7 @@ function buildAudioGraph() {
 		reverbjs.extend(myAudioGraph);
 
 		// 2) Load the impulse response; upon load, connect it to the audio output.
-		var reverbUrl = "http://reverbjs.org/Library/LadyChapelStAlbansCathedral.m4a";
+		var reverbUrl = "js/LadyChapelStAlbansCathedral.m4a";
 		var reverbNode = myAudioGraph.createReverbFromUrl(reverbUrl, function () {
 			reverbNode.connect(myAudioGraph.destination);
 		});
