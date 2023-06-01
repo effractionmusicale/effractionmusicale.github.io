@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Position du musicien dans la salle</h1>
+	<script src="http://reverbjs.org/reverb.js"></script>
+	<script src="js/roomPosition.js"></script>
+	<video onplay="buildAudioGraph()" controls width="100%">
+		<source src="video/5.2-Geo-Shred.mp4"></source>
+	</video>
+	<p>devant <input type="range" id="volume" min="0" max="1" value="0.01" step="0.01" /> milieu</p>
+
+</body>
+</html>
