@@ -1,11 +1,15 @@
-# Step 1
+# Workshop Faust à Improtech/Uzeste 2023
+
+Bla Bla Bla...
+
+## Etape 1
 
 Baisser le volume; être un MONO !
 
 	import("stdfaust.lib");
 	process = os.sawtooth(50);
 
-# Step 2
+## Etape 2
 
 Ajout d'un contrôle de volume :
 
@@ -13,7 +17,7 @@ Ajout d'un contrôle de volume :
 	process = os.sawtooth(50)
 			* hslider("gain", 0.1, 0, 1, 0.01);
 
-# Step 3
+## Etape 3
 
 Ajout d'un contrôle de fréquence :
 
@@ -22,7 +26,7 @@ Ajout d'un contrôle de fréquence :
 			* hslider("gain", 0.1, 0, 1, 0.01);
 
 
-# Step 4
+## Etape 4
 
 Ajout d'un filtre résonnant :
 
@@ -32,7 +36,7 @@ Ajout d'un filtre résonnant :
 	fi.resonlp(300,5,1);
 
 
-# Step 5
+## Etape 5
 
 Restructuration du code :
 
@@ -45,7 +49,7 @@ Restructuration du code :
 			: fi.resonlp(300,5,1);
 
 
-# Step 6
+## Etape 6
 
 Oscillateur sur la fréquence de resonnance :
 
@@ -58,7 +62,7 @@ Oscillateur sur la fréquence de resonnance :
 	process = os.sawtooth(freq)*gain 
 			: fi.resonlp(lfo*300+50,5,1);
 
-# Step 7
+## Etape 7
 
 Oscillateur sur la fréquence de resonnance, ajout de controles sur le lfo :
 
@@ -75,7 +79,7 @@ Oscillateur sur la fréquence de resonnance, ajout de controles sur le lfo :
 			: fi.resonlp(lfo*lrange+50,5,1);
 
 
-# Step 8
+## Etape 8
 
 Image stereo :
 
@@ -95,7 +99,7 @@ Image stereo :
 
 
 
-# Step 9
+## Etape 9
 
 MIDI keyboard, Poly 16 :
 
@@ -116,7 +120,7 @@ MIDI keyboard, Poly 16 :
 
 
 
-# Step 10
+## Etape 10
 
 Ajout d'un limiter :
 
@@ -139,7 +143,7 @@ Ajout d'un limiter :
 
 
 
-# Step 11
+## Etape 11
 
 Ajout de contrôles MIDI :
 
@@ -161,7 +165,7 @@ Ajout de contrôles MIDI :
 	effect = co.limiter_1176_R4_stereo;
 
 
-# Step 12
+## Etape 12
 
 Ajout d'une enveloppe et d'un volume :
 
@@ -182,7 +186,7 @@ Ajout d'une enveloppe et d'un volume :
 	effect = co.limiter_1176_R4_stereo;
 
 
-# Step 13 (Keyboard version)
+## Etape 13 (Keyboard version)
 
 Ajout d'un écho, Vélocité contrôle un peu le lrange :
 
@@ -206,7 +210,7 @@ Ajout d'un écho, Vélocité contrôle un peu le lrange :
 	effect 	= par(i,2,ef.echo(1,0.25, 0.75)) 
 			: co.limiter_1176_R4_stereo;
 
-# Step 14 (Android version)
+## Etape 14 (Android version)
 
 Metadata acc ajoutés aux lfo :
 
