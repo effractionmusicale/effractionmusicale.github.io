@@ -29,7 +29,7 @@ Ajout d'un contrôle de volume :
 	process = os.sawtooth(50)
 			* hslider("gain", 0.1, 0, 1, 0.01);
 
-<a href="https://faustide.grame.fr/?autorun=0&voices=0&name=untitled&inline=CWltcG9ydCgic3RkZmF1c3QubGliIik7Cglwcm9jZXNzID0gb3Muc2F3dG9vdGgoNTApCgkJCSogaHNsaWRlcigiZ2FpbiIsIDAuMSwgMCwgMSwgMC4wMSk7" target="_faust">Essayer</a>
+<a href="https://faustide.grame.fr/?autorun=0&voices=0&name=untitled&inline=CWltcG9ydCgic3RkZmF1c3QubGliIik7Cglwcm9jZXNzID0gb3Muc2F3dG9vdGgoNTApCgkJCSogaHNsaWRlcigiZ2FpbiIsIDAuMSwgMCwgMSwgMC4wMSk7" target="_faust">Essayer &rarr;</a>
 
 ## Etape 3
 
