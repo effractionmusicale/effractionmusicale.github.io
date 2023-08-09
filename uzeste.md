@@ -18,6 +18,8 @@ Baisser le volume; être un MONO !
 	import("stdfaust.lib");
 	process = os.sawtooth(50);
 
+<a href="https://faustide.grame.fr/?autorun=0&voices=0&name=untitled&inline=CWltcG9ydCgic3RkZmF1c3QubGliIik7Cglwcm9jZXNzID0gb3Muc2F3dG9vdGgoNTApOw%3D%3D" target="_faust">Essayer dans le navigateur</a>
+
 [Essayer dans le navigateur](https://faustide.grame.fr/?autorun=0&voices=0&name=untitled&inline=CWltcG9ydCgic3RkZmF1c3QubGliIik7Cglwcm9jZXNzID0gb3Muc2F3dG9vdGgoNTApOw%3D%3D)
 
 ## Etape 2
