@@ -2,18 +2,18 @@
 
 ## Objectif
 
-L'objectif de ce workshop est de vous initier à Faust, un langage de programmation permettant de créer des instruments de musique electronique. Le workshop s'adresse à tous et ne nécessite pas de connaissances préalables en programmation. 
+L'objectif de ce workshop est de vous initier à Faust, un langage de programmation permettant de créer des instruments de musique électroniques. Le workshop s'adresse à tous et ne nécessite pas de connaissances préalables en programmation. 
 
-Durant tout le workshop nous allons utiliser un outil en ligne, le Faust IDE, qui va nous permettre d'écrire et de faire fonctionner nos programmes Faust directement dans un navigateur Web. Pour acceder à cet outil, il suffit d'ouvrir la page <a href="https://faustide.grame.fr" target="_faust">https://faustide.grame.fr</a> depuis son navigateur.
+Durant le workshop, nous allons utiliser un outil en ligne, le Faust IDE, qui va nous permettre d'écrire et de faire fonctionner nos programmes Faust directement dans un navigateur Web. Pour accéder à cet outil, il suffit d'ouvrir la page <a href="https://faustide.grame.fr" target="_faust">https://faustide.grame.fr</a> depuis son navigateur.
 
-Grâce à cet outil, nous allons créér, étape par étape, un petit synthétiseur musicale que l'on pourra ensuite jouer soit directement depuis l'ordinateur, soit à partir d'un clavier MIDI, soit également depuis un smartphone. 
+Grâce à cet outil, nous allons créer, étape par étape, un petit synthétiseur musicale que l'on pourra ensuite jouer soit directement depuis l'ordinateur, soit à partir d'un clavier MIDI, soit également depuis un smartphone. 
 
-Nous terminerons le workshop par une petite improvisation musicale collective, en utilisant l'instrument que nous auront construit.
+Nous terminerons le workshop par une petite improvisation musicale collective, en utilisant l'instrument que nous aurons construit.
 
 
 ## Etape 1
 
-Baisser le volume; être un MONO !
+Baisser le volume; être en mode MONO !
 
 	import("stdfaust.lib");
 	process = os.sawtooth(50);
@@ -69,7 +69,7 @@ Restructuration du code :
 
 ## Etape 6
 
-Oscillateur sur la fréquence de resonnance :
+Oscillateur sur la fréquence de résonance :
 
 	import("stdfaust.lib");
 
@@ -84,7 +84,7 @@ Oscillateur sur la fréquence de resonnance :
 
 ## Etape 7
 
-Oscillateur sur la fréquence de resonnance, ajout de controles sur le lfo :
+Oscillateur sur la fréquence de résonance, ajout de contrôles sur le lfo :
 
 	import("stdfaust.lib");
 
@@ -102,7 +102,7 @@ Oscillateur sur la fréquence de resonnance, ajout de controles sur le lfo :
 
 ## Etape 8
 
-Production d'un son stereo :
+Production d'un son stéréo :
 
 	import("stdfaust.lib");
 
@@ -145,7 +145,7 @@ Pilotage à partir d'un clavier MIDI (Poly 16) :
 
 ## Etape 10
 
-Ajout d'un limiter pour éviter les clicks :
+Ajout d'un limiteur pour éviter les clics :
 
 	import("stdfaust.lib");
 
@@ -214,7 +214,7 @@ Ajout d'une enveloppe et d'un volume :
 
 ## Etape 13 (Keyboard version)
 
-Ajout d'un écho, la vélocité contrôle un peu le lrange :
+Ajout d'un écho, la vélocité contrôle en partie le lrange :
 
 	declare name "Wahoo";
 
@@ -240,7 +240,7 @@ Ajout d'un écho, la vélocité contrôle un peu le lrange :
 
 ## Etape 14 (Android version)
 
-Metadata acc ajoutés aux lfo :
+Metadata acc ajoutées aux lfo :
 
 	declare name "Wahoo";
 
@@ -279,23 +279,3 @@ L'application native n'est pas disponible pour iOS. Il faut donc utiliser la ver
 <img src="wahoo-web.png" alt="drawing" width="40%"/>
 
 
-# Original
-
-Final step :
-
-	import("stdfaust.lib");
-	declare name "WAHOO";
-	oscFreq = vslider("h:WAAHOO/h:OSC/freq[style:knob][unit:Hz]",50,30,500,0.01);
-	oscGain = vslider("h:WAAHOO/h:OSC/gain[style:knob]",0.5,0,1,0.01);
-	lfoFreq = vslider("h:WAAHOO/h:LFO/lfreq[style:knob][unit:Hz]",0.5,0.01,50,0.01);
-	lfoRange = vslider("h:WAAHOO/h:LFO/lrange[style:knob][midi:ctrl 49]",300,10,5000,0.01);
-	volume = hslider("volume[midi:ctrl 48]",0.6,0,1,0.01);
-	gate = button("gate") : en.adsr(0.1, 0.2, 0.8, 2);
-
-	LFO1 = os.lf_triangle(lfoFreq)*0.5 + 0.5;
-	LFO2 = os.lf_triangle(lfoFreq*1.01)*0.5 + 0.5;
-	process = os.sawtooth(oscFreq)*oscGain*gate <: 
-		fi.resonlp(LFO1*lfoRange+50,5,1)*volume,
-		fi.resonlp(LFO2*lfoRange+50,5,1)*volume;
-
-	effect = par(i,2,ef.echo(2,0.5,0.9)) : co.limiter_1176_R4_stereo;
