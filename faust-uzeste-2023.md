@@ -1,6 +1,15 @@
 # Workshop Faust à Improtech/Uzeste 2023
 
-Bla Bla Bla...
+## Objectif
+
+L'objectif de ce workshop est de vous initier à Faust, un langage de programmation permettant de créer des instruments de musique electronique. Le workshop s'adresse à tous et ne nécessite pas de connaissances préalables en programmation. 
+
+Durant tout le workshop nous allons utiliser un outil en ligne, le Faust IDE, qui va nous permettre d'écrire et de faire fonctionner nos programmes Faust directement dans un navigateur Web. Pour acceder à cet outil, il suffit d'ouvrir la page https://faustide.grame.fr depuis son navigateur.
+
+Grâce à cet outil, nous allons créér, étape par étape, un petit synthétiseur musicale que l'on pourra ensuite jouer soit directement depuis l'ordinateur, soit à partir d'un clavier MIDI, soit également depuis un smartphone. 
+
+Nous terminerons le workshop par une petite improvisation musicale collective, en utilisant l'instrument que nous auront construit.
+
 
 ## Etape 1
 
@@ -81,7 +90,7 @@ Oscillateur sur la fréquence de resonnance, ajout de controles sur le lfo :
 
 ## Etape 8
 
-Image stereo :
+Production d'un son stereo :
 
 	import("stdfaust.lib");
 
@@ -101,7 +110,7 @@ Image stereo :
 
 ## Etape 9
 
-MIDI keyboard, Poly 16 :
+Pilotage à partir d'un clavier MIDI (Poly 16) :
 
 	import("stdfaust.lib");
 
@@ -122,7 +131,7 @@ MIDI keyboard, Poly 16 :
 
 ## Etape 10
 
-Ajout d'un limiter :
+Ajout d'un limiter pour éviter les clicks :
 
 	import("stdfaust.lib");
 
@@ -188,7 +197,7 @@ Ajout d'une enveloppe et d'un volume :
 
 ## Etape 13 (Keyboard version)
 
-Ajout d'un écho, Vélocité contrôle un peu le lrange :
+Ajout d'un écho, la vélocité contrôle un peu le lrange :
 
 	declare name "Wahoo";
 
