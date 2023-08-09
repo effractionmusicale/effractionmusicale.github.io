@@ -266,8 +266,17 @@ Metadata acc ajoutés aux lfo :
 
 <a href="https://faustide.grame.fr/?autorun=0&voices=8&name=untitled&inline=CWRlY2xhcmUgbmFtZSAiV2Fob28iOwoKCS8vIHZlcnNpb24gcG91ciBhbmRyb2lkCiAgICBpbXBvcnQoInN0ZGZhdXN0LmxpYiIpOwoJZnJlcSA9IGhzbGlkZXIoImZyZXEiLCA1MCwgMzAsIDUwMCwgMSk7CglnYWluID0gaHNsaWRlcigiZ2FpbiIsIDAuMSwgMCwgMSwgMC4wMSk7CglnYXRlID0gYnV0dG9uKCJnYXRlIikgOiBlbi5hZHNyKDAuMSwgMC4yLCAwLjgsIDIpIDsKCXZvbHVtZSA9IGhzbGlkZXIoInZvbHVtZSIsMC42LDAsMSwwLjAxKTsKCglsZnJlcSA9IGhzbGlkZXIoImxmcmVxW2FjYzogMCAzIC0xMCAwIDEwXSIsMC41LDAuMDEsNCwwLjAxKTsKCWxyYW5nZSA9IGhzbGlkZXIoImxyYW5nZVthY2M6IDEgMyAtMTAgMCAxMF0iLDMwMCwxMCw1MDAwLDAuMDEpICogKDErZ2Fpbik7CglsZm8xID0gb3MubGZfdHJpYW5nbGUobGZyZXEpKjAuNSswLjU7CglsZm8yID0gb3MubGZfdHJpYW5nbGUobGZyZXEqMS4wMSkqMC41KzAuNTsKCQoJcHJvY2VzcyA9IG9zLnNhd3Rvb3RoKGZyZXEpKmdhaW4qZ2F0ZSAKCQkJPDogCWZpLnJlc29ubHAobGZvMSpscmFuZ2UrNTAsNSwxKSp2b2x1bWUsIAoJCQkJZmkucmVzb25scChsZm8yKmxyYW5nZSs1MCw1LDEpKnZvbHVtZSAKICAgICAgICAgICAgOiBlZmZlY3Q7IAoKCWVmZmVjdCAJPSBwYXIoaSwyLGVmLmVjaG8oMSwwLjI1LCAwLjc1KSkgCgkJCTogY28ubGltaXRlcl8xMTc2X1I0X3N0ZXJlbzs%3D" target="_faust">Essayer</a>
 
+## Installer l'application sur Android
+
 L'application pour Android est disponible [ici](https://effractionmusicale.fr/wahoo.apk) ou via le QR code ci-dessous :
-![](wahoo-qrcode.png)
+
+<img src="wahoo-qrcode.png" alt="drawing" width="40%"/>
+
+## Installer l'application sur iOS
+
+L'application native n'est pas disponible pour iOS. Il faut donc utiliser la version Web précédemment crée. On peut l'ouvrir à partir du QR code suivant :
+
+<img src="wahoo-web.png" alt="drawing" width="40%"/>
 
 
 # Original
