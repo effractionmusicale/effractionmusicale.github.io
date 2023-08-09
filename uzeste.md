@@ -274,7 +274,7 @@ L'application pour Android est disponible [ici](https://effractionmusicale.fr/wa
 
 ## Installer l'application sur iOS
 
-L'application native n'est pas disponible pour iOS. Il faut donc utiliser la version Web précédemment crée. On peut l'ouvrir à partir du QR code suivant :
+L'application native n'est pas disponible pour iOS. Il faut donc utiliser la version Web préalablement crée. On peut l'ouvrir à partir du QR code suivant :
 
 <img src="wahoo-web.png" alt="drawing" width="40%"/>
 
