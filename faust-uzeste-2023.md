@@ -18,6 +18,8 @@ Baisser le volume; être un MONO !
 	import("stdfaust.lib");
 	process = os.sawtooth(50);
 
+[Essayer dans le navigateur](https://faustide.grame.fr/?autorun=1&voices=0&name=untitled&inline=CWltcG9ydCgic3RkZmF1c3QubGliIik7Cglwcm9jZXNzID0gb3Muc2F3dG9vdGgoNTApOw%3D%3D)
+
 ## Etape 2
 
 Ajout d'un contrôle de volume :
@@ -26,6 +28,8 @@ Ajout d'un contrôle de volume :
 	process = os.sawtooth(50)
 			* hslider("gain", 0.1, 0, 1, 0.01);
 
+[Essayer dans le navigateur](https://faustide.grame.fr/?autorun=1&voices=0&name=untitled&inline=CWltcG9ydCgic3RkZmF1c3QubGliIik7Cglwcm9jZXNzID0gb3Muc2F3dG9vdGgoNTApCgkJCSogaHNsaWRlcigiZ2FpbiIsIDAuMSwgMCwgMSwgMC4wMSk7)
+
 ## Etape 3
 
 Ajout d'un contrôle de fréquence :
@@ -33,6 +37,8 @@ Ajout d'un contrôle de fréquence :
 	import("stdfaust.lib");
 	process = os.sawtooth(hslider("freq", 50, 30, 8000, 1))
 			* hslider("gain", 0.1, 0, 1, 0.01);
+
+[Essayer dans le navigateur]()
 
 
 ## Etape 4
@@ -44,6 +50,7 @@ Ajout d'un filtre résonnant :
 			* hslider("gain", 0.1, 0, 1, 0.01) :
 	fi.resonlp(300,5,1);
 
+[Essayer dans le navigateur]()
 
 ## Etape 5
 
@@ -57,6 +64,7 @@ Restructuration du code :
 	process = os.sawtooth(freq)*gain 
 			: fi.resonlp(300,5,1);
 
+[Essayer dans le navigateur]()
 
 ## Etape 6
 
@@ -70,6 +78,8 @@ Oscillateur sur la fréquence de resonnance :
 	
 	process = os.sawtooth(freq)*gain 
 			: fi.resonlp(lfo*300+50,5,1);
+
+[Essayer dans le navigateur]()
 
 ## Etape 7
 
@@ -87,6 +97,7 @@ Oscillateur sur la fréquence de resonnance, ajout de controles sur le lfo :
 	process = os.sawtooth(freq)*gain 
 			: fi.resonlp(lfo*lrange+50,5,1);
 
+[Essayer dans le navigateur]()
 
 ## Etape 8
 
@@ -107,6 +118,7 @@ Production d'un son stereo :
 				fi.resonlp(lfo2*lrange+50,5,1); 
 
 
+[Essayer dans le navigateur]()
 
 ## Etape 9
 
@@ -128,6 +140,7 @@ Pilotage à partir d'un clavier MIDI (Poly 16) :
 				fi.resonlp(lfo2*lrange+50,5,1); 
 
 
+[Essayer dans le navigateur]()
 
 ## Etape 10
 
@@ -150,6 +163,7 @@ Ajout d'un limiter pour éviter les clicks :
 
 	effect = co.limiter_1176_R4_stereo;
 
+[Essayer dans le navigateur]()
 
 
 ## Etape 11
@@ -173,6 +187,7 @@ Ajout de contrôles MIDI :
 
 	effect = co.limiter_1176_R4_stereo;
 
+[Essayer dans le navigateur]()
 
 ## Etape 12
 
@@ -194,6 +209,7 @@ Ajout d'une enveloppe et d'un volume :
 				fi.resonlp(lfo2*lrange+50,5,1); 
 	effect = co.limiter_1176_R4_stereo;
 
+[Essayer dans le navigateur]()
 
 ## Etape 13 (Keyboard version)
 
@@ -218,6 +234,8 @@ Ajout d'un écho, la vélocité contrôle un peu le lrange :
 
 	effect 	= par(i,2,ef.echo(1,0.25, 0.75)) 
 			: co.limiter_1176_R4_stereo;
+
+[Essayer dans le navigateur]()
 
 ## Etape 14 (Android version)
 
@@ -245,6 +263,7 @@ Metadata acc ajoutés aux lfo :
 	effect 	= par(i,2,ef.echo(1,0.25, 0.75)) 
 			: co.limiter_1176_R4_stereo;
 
+[Essayer dans le navigateur]()
 
 
 # Original
