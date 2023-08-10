@@ -2,11 +2,11 @@
 
 ## Objectif
 
-L'objectif de ce workshop est de vous initier à Faust, un langage de programmation permettant de créer des instruments de musique électroniques. Le workshop s'adresse à tous et ne nécessite pas de connaissances préalables en programmation. 
+L'objectif de ce workshop est de vous initier à Faust, un langage de programmation permettant de créer des instruments de musique électroniques. Le workshop s'adresse à toutes et tous, et ne nécessite pas de connaissances préalables en programmation. 
 
 Durant le workshop, nous allons utiliser un outil en ligne, le Faust IDE, qui va nous permettre d'écrire et de faire fonctionner nos programmes Faust directement dans un navigateur Web. Pour accéder à cet outil, il suffit d'ouvrir la page <a href="https://faustide.grame.fr" target="_faust">https://faustide.grame.fr</a> depuis son navigateur.
 
-Grâce à cet outil, nous allons créer, étape par étape, un petit synthétiseur musicale que l'on pourra ensuite jouer soit directement depuis l'ordinateur, soit à partir d'un clavier MIDI, soit également depuis un smartphone. 
+Grâce à cet outil, nous allons créer, étape par étape, un petit synthétiseur musical que l'on pourra ensuite jouer soit directement depuis l'ordinateur, soit à partir d'un clavier MIDI, soit également depuis un smartphone. 
 
 Nous terminerons le workshop par une petite improvisation musicale collective, en utilisant l'instrument que nous aurons construit.
 
@@ -274,7 +274,7 @@ L'application pour Android est disponible [ici](https://effractionmusicale.fr/wa
 
 ## Installer l'application sur iOS
 
-L'application native n'est pas disponible pour iOS. Il faut donc utiliser la version Web préalablement crée. On peut l'ouvrir à partir du QR code suivant :
+L'application native n'est pas disponible pour iOS. Il faut donc utiliser la version Web préalablement créée. On peut l'ouvrir à partir du QR code suivant :
 
 <img src="wahoo-web.png" alt="drawing" width="40%"/>
 
