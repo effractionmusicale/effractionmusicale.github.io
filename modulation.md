@@ -154,7 +154,7 @@ On peut même remplacer le slider par un autre circuit :
 
 ## Etape 7
 
-Où faire complètement disparaitre d'interface utilisateur et retrouver l'algorithme audio :
+Ou faire complètement disparaitre d'interface utilisateur et retrouver l'algorithme audio :
 
 	import("stdfaust.lib");
 	
