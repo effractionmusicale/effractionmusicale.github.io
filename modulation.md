@@ -1,10 +1,10 @@
 # Widget Modulation
 
-Présentation de la _widget Modulation_ en quelques étapes.
+L'objectif de la _widget Modulation_ est de permettre de moduler, par des signaux extérieurs, les éléments d'interface utilisateur d'un circuit sans avoir à en modifier le code. 
 
 ## Etape 1
 
-Un oscillateur et un LFO qui ne peuvent pas communiquer entre eux :
+Voici un oscillateur et un LFO qui ne peuvent pas vraiment communiquer entre eux :
 
 	import("stdfaust.lib");
 	
@@ -29,7 +29,7 @@ On peut se servir du LFO pour moduler en amplitude le signal de sortie de l'osci
 
 ## Etape 2
 
-Si l'on veux pouvoir moduler la fréquence de l'oscillateur, il faut modifier son code. On va créer une variante modulable de l'oscillateur :
+Si l'on veut pouvoir moduler la fréquence de l'oscillateur, il faut modifier son code. On va créer une variante modulable de l'oscillateur :
 
 
 	import("stdfaust.lib");
@@ -53,14 +53,14 @@ Si l'on veux pouvoir moduler la fréquence de l'oscillateur, il faut modifier so
 				
 	process = lfo(0) : mosc(0);
 
-Là, c'est facile. Mais dans le cas d'une bibliothèque existante, c'est beaucoup plus compliqué et beaucoup plus lourd !
+Là, c'est facile. Mais dans le cas d'une bibliothèque existante, c'est plus compliqué et plus lourd !
 
 <a href="https://faustide.grame.fr/?autorun=1&voices=0&name=untitled2&inline=CWltcG9ydCgic3RkZmF1c3QubGliIik7CgkKCWxmbyhuKSA9ICAgIGhncm91cCgiTEZPICUybiIsIAoJCQkJCW9zLm9zYyh2c2xpZGVyKCJmcmVxW3N0eWxlOmtub2JdW3NjYWxlOmxvZ11bdW5pdDpIel0iLCAxLCAwLjEsIDgwMCwgMC4xKSkKCQkJCQk6ICoodnNsaWRlcigiZ2FpbltzdHlsZTprbm9iXSIsIDAsIDAsIDEsIDAuMDEpKQoJCQkJCTogKygxKQoJCQkJCTogKih2c2xpZGVyKCJ2YWx1ZVtzdHlsZTprbm9iXVtzY2FsZTpsb2ddIiwgMSwgMC4xLCAxMCwgMC4xKSkKCQkJCSk7IAoKCW9zYyhuKSA9ICAgIGhncm91cCgiT1NDICUybiIsIAoJCQkJCW9zLm9zYyh2c2xpZGVyKCJmcmVxW3N0eWxlOmtub2JdW3NjYWxlOmxvZ11bdW5pdDpIel0iLCA0NDAsIDIwLCAyMDAwMCwgMSkpCgkJCQkJOiAqKHZzbGlkZXIoImdhaW5bc3R5bGU6a25vYl0iLCAwLCAwLCAxLCAwLjAxKSkKCQkJCSk7IAoKCW1vc2Mobix4KSA9IGhncm91cCgiT1NDICUybiIsIAoJCQkJCW9zLm9zYyh2c2xpZGVyKCJmcmVxW3N0eWxlOmtub2JdW3NjYWxlOmxvZ11bdW5pdDpIel0iLCA0NDAsIDIwLCAyMDAwMCwgMSkgKiB4KQoJCQkJCTogKih2c2xpZGVyKCJnYWluW3N0eWxlOmtub2JdIiwgMCwgMCwgMSwgMC4wMSkpCgkJCQkpOyAKCQkJCQoJcHJvY2VzcyA9IGxmbygwKSA6IG1vc2MoMCk7Cg%3D%3D" target="_faust">Essayer &rarr;</a>
 
 
 ## Etape 3
 
-L'intérêt de la nouvelle construction, la _widget modulation_ est de permettre de faire cela sans modifier le code existant !
+L'intérêt de la _widget modulation_ est de permettre de faire cela sans modifier le code existant !
 
 	import("stdfaust.lib");
 	
@@ -83,7 +83,7 @@ L'intérêt de la nouvelle construction, la _widget modulation_ est de permettre
 
 ## Etape 4
 
-On peut spécifier la façon de combiner les signaux de modulation et de contrôle :
+On peut spécifier précisément la façon de combiner les signaux de modulation et de contrôle en indiquant le circuit à utiliser :
 
 	import("stdfaust.lib");
 	
@@ -100,6 +100,8 @@ On peut spécifier la façon de combiner les signaux de modulation et de contrô
 				); 
 				
 	process = lfo(0) : ["freq":* -> osc(0)];
+
+Par défaut, le circuit de modulation est une multiplication.
 
 <a href="https://faustide.grame.fr/?autorun=1&voices=0&name=untitled2&inline=CWltcG9ydCgic3RkZmF1c3QubGliIik7CgkKCWxmbyhuKSA9ICAgIGhncm91cCgiTEZPICUybiIsIAoJCQkJCW9zLm9zYyh2c2xpZGVyKCJmcmVxW3N0eWxlOmtub2JdW3NjYWxlOmxvZ11bdW5pdDpIel0iLCAxLCAwLjEsIDgwMCwgMC4xKSkKCQkJCQk6ICoodnNsaWRlcigiZ2FpbltzdHlsZTprbm9iXSIsIDAsIDAsIDEsIDAuMDEpKQoJCQkJCTogKygxKQoJCQkJCTogKih2c2xpZGVyKCJ2YWx1ZVtzdHlsZTprbm9iXVtzY2FsZTpsb2ddIiwgMSwgMC4xLCAxMCwgMC4xKSkKCQkJCSk7IAoKCW9zYyhuKSA9ICAgIGhncm91cCgiT1NDICUybiIsIAoJCQkJCW9zLm9zYyh2c2xpZGVyKCJmcmVxW3N0eWxlOmtub2JdW3NjYWxlOmxvZ11bdW5pdDpIel0iLCA0NDAsIDIwLCAyMDAwMCwgMSkpCgkJCQkJOiAqKHZzbGlkZXIoImdhaW5bc3R5bGU6a25vYl0iLCAwLCAwLCAxLCAwLjAxKSkKCQkJCSk7IAoJCQkJCglwcm9jZXNzID0gbGZvKDApIDogWyJmcmVxIjoqIC0-IG9zYygwKV07Cg%3D%3D" target="_faust">Essayer &rarr;</a>
 
