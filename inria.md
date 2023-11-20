@@ -302,12 +302,8 @@ effect 	= par(i,2,ef.echo(1,0.25, 0.75))
 
 ## Installer l'application sur Android
 
-L'application pour Android est disponible [ici](https://faustlangdev.github.io/wahoo.apk) ou via le QR code ci-dessous :
+L'application pour Android est disponible [ici](https://effractionmusicale.fr/wahoo.apk) ou via le QR code ci-dessous :
 
-<img src="img/wahoo-qrcode.png" alt="drawing" width="25%"/>
+<img src="qrc-wahoo-apk.png" alt="drawing" width="25%"/>
 
-## Installer l'application sur iOS
-
-L'application native n'est pas disponible pour iOS. Il faut donc utiliser la version Web préalablement créée. On peut l'ouvrir à partir du QR code suivant :
-
-<img src="img/wahoo-web.png" alt="drawing" width="25%"/>
+L'application native n'est pas disponible pour iOS. Il faut donc utiliser la version Web préalablement créée.
