@@ -2,6 +2,9 @@
 
 ## Pour suivre : <a href="https://effractionmusicale.fr/inria" >https://effractionmusicale.fr/inria</a>
 
+<img src="qrc-workshop.png" alt="workshop" width="25%"/>
+
+
 ## Objectif
 
 L'objectif de ce workshop est de vous initier à Faust, un langage de programmation permettant de créer des instruments de musique électroniques. Le workshop s'adresse à toutes et tous, et ne nécessite pas de connaissances préalables en programmation. 
