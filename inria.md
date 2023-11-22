@@ -1,4 +1,6 @@
-# Workshop Faust au festival numérique INRIA @ Lyon
+# WORKSHOP FAUST, 23/11/2023, INRIA LYON
+
+## Pour suivre : <a href="https://effractionmusicale.fr/inria" >https://effractionmusicale.fr/inria</a>
 
 ## Objectif
 
