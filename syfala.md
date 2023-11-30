@@ -151,7 +151,9 @@ process = no.noise * hslider("noise", 0, 0, 1, 0.01)
 We add an LFO to modulate the noise level.
 
 We have first to create the "lfo.dsp" file in the online editor with the following content:
+
 <a href="https://faustide.grame.fr/?autorun=1&voices=0&name=lfo&inline=aW1wb3J0KCJzdGRmYXVzdC5saWIiKTsKCmxmbyhuKSA9IGhncm91cCgiTEZPICVuIiwgIG9zYyhmcmVxKSA6ICooZ2FpbikgOiArKDEpKSAKICAgIHdpdGggewogICAgICAgIC8vIHVzZXIgaW50ZXJmYWNlCiAgICAgICAgZnJlcSA9IHZzbGlkZXIoImZyZXFbc3R5bGU6a25vYl1bdW5pdDpIel1bc2NhbGU6bG9nXSIsIDEsIDAuMSwgNDAsIDAuMSk7CiAgICAgICAgZ2FpbiA9IHZzbGlkZXIoImdhaW5bc3R5bGU6a25vYl0iLCAwLCAwLCAxLCAwLjAxKTsKICAgICAgICAvLyBzaW5ld2F2ZSBvc2NpbGxhdG9yCiAgICAgICAgb3NjKGYpID0gZi9tYS5TUiA6ICgrLDE6Zm1vZCkgfiBfIDogKigyKm1hLlBJKSA6IHNpbjsKICAgIH07Cgpwcm9jZXNzID0gbGZvKDEpOwoKCgo%3D" target="_faust">CREATE &rarr;</a>
+
 
 ```faust
 import("stdfaust.lib");
