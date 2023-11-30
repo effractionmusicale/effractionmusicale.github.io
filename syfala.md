@@ -150,6 +150,25 @@ process = no.noise * hslider("noise", 0, 0, 1, 0.01)
 
 We add an LFO to modulate the noise level.
 
+We have first to create the "lfo.dsp" file in the online editor with the following content:
+<a href="https://faustide.grame.fr/?autorun=1&voices=0&name=lfo&inline=aW1wb3J0KCJzdGRmYXVzdC5saWIiKTsKCmxmbyhuKSA9IGhncm91cCgiTEZPICVuIiwgIG9zYyhmcmVxKSA6ICooZ2FpbikgOiArKDEpKSAKICAgIHdpdGggewogICAgICAgIC8vIHVzZXIgaW50ZXJmYWNlCiAgICAgICAgZnJlcSA9IHZzbGlkZXIoImZyZXFbc3R5bGU6a25vYl1bdW5pdDpIel1bc2NhbGU6bG9nXSIsIDEsIDAuMSwgNDAsIDAuMSk7CiAgICAgICAgZ2FpbiA9IHZzbGlkZXIoImdhaW5bc3R5bGU6a25vYl0iLCAwLCAwLCAxLCAwLjAxKTsKICAgICAgICAvLyBzaW5ld2F2ZSBvc2NpbGxhdG9yCiAgICAgICAgb3NjKGYpID0gZi9tYS5TUiA6ICgrLDE6Zm1vZCkgfiBfIDogKigyKm1hLlBJKSA6IHNpbjsKICAgIH07Cgpwcm9jZXNzID0gbGZvKDEpOwoKCgo%3D" target="_faust">CREATE &rarr;</a>
+
+```faust
+import("stdfaust.lib");
+
+lfo(n) = hgroup("LFO %n",  osc(freq) : *(gain) : +(1)) 
+    with {
+        // user interface
+        freq = vslider("freq[style:knob][unit:Hz][scale:log]", 1, 0.1, 40, 0.1);
+        gain = vslider("gain[style:knob]", 0, 0, 1, 0.01);
+        // sinewave oscillator
+        osc(f) = f/ma.SR : (+,1:fmod) ~ _ : *(2*ma.PI) : sin;
+    };
+
+process = lfo(1);
+
+```
+
 <a href="https://faustide.grame.fr/?autorun=1&voices=0&name=untitled1&inline=aW1wb3J0KCJzdGRmYXVzdC5saWIiKTsKCnJlc29uKGQpID0gK34oQChkKTptZWFuKTsKbWVhbiA9ICooMC40OTgpIDw6IF8sIG1lbSA6PiBfOwoKcHJlc29uKE4sIGQxLCBkMikgPSBwYXIoaSwgTiwgcmVzb24oZDErKGQyLWQxKSppLyhOLTEpKSk7CgpwYW5uZXIgKGZ4KSA9IGZ4IDogcGFyKGksIE4sIHBhbihpLyhOLTEpKSkgOj4gXyxfIAoJd2l0aCB7IAoJCU4gPSBvdXRwdXRzKGZ4KTsgCgkJcGFuKHApID0gXyA8OiAqKHNxcnQoMS1wKSksICooc3FydChwKSk7IAoJfTsKCmVuaGFuY2VyKGZ4KSA9IGZ4IDogcGFyKGksIE4sICooMStnKnByb3goaSxwKihOLTEpKSkpCgl3aXRoIHsKCQlOID0gb3V0cHV0cyhmeCk7CgkJZyA9IGhzbGlkZXIoImdhaW4iLCAwLCAwLCA1LCAwLjAxKTsKCQlwID0gaHNsaWRlcigicG9zIiwgMCwgMCwgMSwgMC4wMSk7CgkJcHJveCh4LHkpID0gMSAtIG1pbigxLGFicyh4LXkpKTsKCX07Cgptbz1saWJyYXJ5KCJsZm8uZHNwIik7CQkvLyA8LSBIZXJlCgpwcm9jZXNzID0gbm8ubm9pc2UgKiBtby5sZm8oMSkgKiBoc2xpZGVyKCJub2lzZSIsIDAsIDAsIDEsIDAuMDEpIAkJLy8gPC0gSGVyZQoJCTw6IHBhbm5lcihlbmhhbmNlcihwcmVzb24oNCwgNDAwLCA4MCkpKSAKCQk6IGNvLmxpbWl0ZXJfMTE3Nl9SNF9zdGVyZW87" target="_faust">TRY &rarr;</a>
 
 ```faust
