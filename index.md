@@ -24,19 +24,19 @@ _Editions Lugdivine. 35 euros._
 	</button>
 </a>
 
-<a href="./presss/diapason.jpeg" >
+<a href="./presse/diapason.jpeg" >
 	<button style="background-color: rgb(205,92,92); border:none; color: rgb(240,240,240); height:50px; width:200px; margin-top:4px; margin-bottom:10px; margin-left:auto; margin-right:auto;  display: block; border-radius: 2px; position: fixed; top: 20px;right: 20px;"> 
 		::Diapason
 	</button>
 </a>
 
-<a href="./presss/hemisphereson.jpeg" >
+<a href="./presse/hemisphereson.jpeg" >
 	<button style="background-color: rgb(205,92,92); border:none; color: rgb(240,240,240); height:50px; width:200px; margin-top:4px; margin-bottom:10px; margin-left:auto; margin-right:auto;  display: block; border-radius: 2px; position: fixed; top: 80px;right: 20px;"> 
 		::Hémisphère Son
 	</button>
 </a>
 
-<a href="./presss/musicologies.jpeg" >
+<a href="./presse/musicologies.jpeg" >
 	<button style="background-color: rgb(205,92,92); border:none; color: rgb(240,240,240); height:50px; width:200px; margin-top:4px; margin-bottom:10px; margin-left:auto; margin-right:auto;  display: block; border-radius: 2px; position: fixed; top: 140px;right: 20px;"> 
 		::Musicologies Nouvelles
 	</button>
