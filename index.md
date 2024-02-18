@@ -25,20 +25,20 @@ _Editions Lugdivine. 35 euros._
 </a>
 
 <a href="./presse/diapason.jpeg" >
-	<button style="background-color: rgb(205,92,92); border:none; color: rgb(240,240,240); height:50px; width:200px; margin-top:4px; margin-bottom:10px; margin-left:auto; margin-right:auto;  display: block; border-radius: 2px; position: fixed; top: 20px; right: 20px;text-align: right;"> 
-		&#8594;Diapason
+	<button style="background-color: rgb(205,92,92 / 83%); border:none; color: rgb(240,240,240); height:50px; width:150px; margin-top:4px; margin-bottom:10px; margin-left:auto; margin-right:auto;  display: block; border-radius: 2px; position: fixed; top: 20px; right: 5px;text-align: right;"> 
+		Diapason &#8594;
 	</button>
 </a>
 
 <a href="./presse/hemisphereson.jpeg" >
-	<button style="background-color: rgb(205,92,92); border:none; color: rgb(240,240,240); height:50px; width:200px; margin-top:4px; margin-bottom:10px; margin-left:auto; margin-right:auto;  display: block; border-radius: 2px; position: fixed; top: 80px; right: 20px; text-align: right;"> 
-		&#8594;Hémisphère Son
+	<button style="background-color: rgb(205,92,92 / 83%); border:none; color: rgb(240,240,240); height:50px; width:150px; margin-top:4px; margin-bottom:10px; margin-left:auto; margin-right:auto;  display: block; border-radius: 2px; position: fixed; top: 80px; right: 5px; text-align: right;"> 
+		Hémisphère Son &#8594;
 	</button>
 </a>
 
 <a href="./presse/musicologies.jpeg" >
-	<button style="background-color: rgb(205,92,92); border:none; color: rgb(240,240,240); height:50px; width:200px; margin-top:4px; margin-bottom:10px; margin-left:auto; margin-right:auto;  display: block; border-radius: 2px; position: fixed; top: 140px; right: 20px;text-align: right;"> 
-		&#8594;Musicologies Nouvelles
+	<button style="background-color: rgb(205,92,92 / 83%); border:none; color: rgb(240,240,240); height:50px; width:150px; margin-top:4px; margin-bottom:10px; margin-left:auto; margin-right:auto;  display: block; border-radius: 2px; position: fixed; top: 140px; right: 5px;text-align: right;"> 
+		Musicologies Nouvelles &#8594;
 	</button>
 </a>
 
