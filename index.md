@@ -36,7 +36,7 @@ _Editions Lugdivine. 35 euros._
 	</button>
 </a>
 
-<a href="./presse/musicologies.jpeg" >
+<a href="./presse/musicologies.pdf" >
 	<button style="background-color: rgb(205,92,92,0.8); border:none; color: rgb(240,240,240); height:50px; width:150px; margin-top:4px; margin-bottom:10px; margin-left:auto; margin-right:auto;  display: block; border-radius: 2px; position: fixed; top: 140px; right: 5px;text-align: right; font-size: 12px;"> 
 		Musicologies Nvlles &#8594;
 	</button>
