@@ -9,18 +9,18 @@ _Editions Lugdivine. 35 euros._
 
 
 <a href="./extrait.pdf" >
-	<button style="background-color: rgb(170,90,98); border:none; color: rgb(240,240,240); height:50px; width:200px; margin-top:30px; margin-bottom:4px; margin-left:auto; margin-right:auto; display: block; border-radius: 2px;"> 
-		Lire un extrait
+	<button style="background-color: rgb(170,90,98); border:none; color: rgb(240,240,240); height:50px; width:200px; margin-top:30px; margin-bottom:4px; margin-left:auto; margin-right:auto; display: block; border-radius: 2px; position: fixed; top: 260px; right: 5px;text-align: right; font-size: 12px;"> 
+		Lire un extrait &#8594
 	</button>
 </a>
 <a href="./communique-presse.pdf" >
-	<button style="background-color: rgb(157,93,157); border:none; color: rgb(240,240,240); height:50px; width:200px; margin-top:4px; margin-bottom:4px; margin-left:auto; margin-right:auto; display: block; border-radius: 2px;"> 
-		Lire le communiqué
+	<button style="background-color: rgb(157,93,157); border:none; color: rgb(240,240,240); height:50px; width:200px; margin-top:4px; margin-bottom:4px; margin-left:auto; margin-right:auto; display: block; border-radius: 2px; position: fixed; top: 320px; right: 5px;text-align: right; font-size: 12px;"> 
+		Lire le communiqué &#8594
 	</button>
 </a>
 <a href="https://docs.google.com/forms/d/e/1FAIpQLScLCjXs3Xj6-VtVk2xyAWq1rQXPHhnaoTciAwInFju_6_AsmA/viewform" >
-	<button style="background-color: rgb(90,98,170); border:none; color: rgb(240,240,240); height:50px; width:200px; margin-top:4px; margin-bottom:10px; margin-left:auto; margin-right:auto;  display: block; border-radius: 2px;"> 
-		Commander le livre
+	<button style="background-color: rgb(90,98,170); border:none; color: rgb(240,240,240); height:50px; width:200px; margin-top:4px; margin-bottom:10px; margin-left:auto; margin-right:auto;  display: block; border-radius: 2px; position: fixed; top: 380px; right: 5px;text-align: right; font-size: 12px;"> 
+		Commander le livre &#8594
 	</button>
 </a>
 
@@ -30,7 +30,7 @@ _Editions Lugdivine. 35 euros._
 	</button>
 </a>
 
-<a href="./presse/hemisphereson.jpeg" >
+<a href="./presse/hemisphereson.pdf" >
 	<button style="background-color: rgba(205,92,92,0.8); border:none; color: rgb(240,240,240); height:50px; width:150px; margin-top:4px; margin-bottom:10px; margin-left:auto; margin-right:auto;  display: block; border-radius: 2px; position: fixed; top: 80px; right: 5px; text-align: right; font-size: 12px;"> 
 		Hémisphère Son &#8594;
 	</button>
