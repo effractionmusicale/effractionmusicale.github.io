@@ -1,4 +1,4 @@
-# FAUST WORKSHOP AT INRIA LYON
+# WORKSHOP FAUST -- INRIA LYON
 
 ## Pour suivre : <a href="https://effractionmusicale.fr/inria" >https://effractionmusicale.fr/inria</a>
 
