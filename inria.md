@@ -1,4 +1,4 @@
-# WORKSHOP FAUST, 23/11/2023, INRIA LYON
+# FAUST WORKSHOP AT INRIA LYON
 
 ## Pour suivre : <a href="https://effractionmusicale.fr/inria" >https://effractionmusicale.fr/inria</a>
 
