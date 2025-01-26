@@ -321,6 +321,14 @@ effect 	= par(i,2,ef.echo(1,0.25, 0.75))
 ```
 
 
+## Installer l'application en mode Web
+
+L'application, en mode web, est disponible [ici](https://faustservicecloud.grame.fr//5b5517470e7a388188b429e34c50243a7bfdbc1e/web/pwa/index.html) ou via le QR code ci-dessous :
+
+<img src="qrc-wahoo-pwa.png" alt="drawing" width="25%"/>
+
+
+
 ## Installer l'application sur Android
 
 L'application pour Android est disponible [ici](https://effractionmusicale.fr/wahoo.apk) ou via le QR code ci-dessous :
