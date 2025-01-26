@@ -1,5 +1,7 @@
 # ATELIER FAUST -- LYCEE SIMONE WEIL
 
+<img src="ciche.jpg" alt="workshop" width="100%"/>
+
 ## Pour suivre : <a href="https://effractionmusicale.fr/weil" >https://effractionmusicale.fr/weil</a>
 
 <img src="qrc-weil.png" alt="workshop" width="25%"/>
@@ -7,7 +9,7 @@
 
 ## Objectif
 
-L'objectif de cet atelier est de vous initier à Faust, un langage de programmation permettant de créer des instruments de musique électroniques. L'atelier s'adresse à toutes et tous, et ne nécessite pas de connaissances préalables en programmation. 
+L'objectif de cet atelier s'insérant dans le programme Chiche! de l'INRIA est de vous initier à Faust, un langage de programmation permettant de créer des instruments de musique électroniques. L'atelier s'adresse à toutes et tous, et ne nécessite pas de connaissances préalables en programmation. 
 
 Durant l'atelier, nous allons utiliser un outil en ligne, le Faust IDE, qui va nous permettre d'écrire et de faire fonctionner nos programmes Faust directement dans un navigateur Web. Pour accéder à cet outil, il suffit d'ouvrir la page <a href="https://faustide.grame.fr" target="_faust">https://faustide.grame.fr</a> depuis son navigateur.
 
