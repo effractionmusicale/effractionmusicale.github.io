@@ -11,7 +11,12 @@
 
 L'objectif de cet atelier s'insérant dans le programme Chiche! de l'INRIA est de vous initier à Faust, un langage de programmation permettant de créer des instruments de musique électroniques. L'atelier s'adresse à toutes et tous, et ne nécessite pas de connaissances préalables en programmation. 
 
-<img src="synth.jpg" alt="synth" width="100%"/>
+<figure>
+  <img src="synth.jpg" alt="synth" width="100%"/>
+  <figcaption>Faust, un langage de programmation pour les instruments électroniques.</figcaption>
+</figure>
+
+*Figure 1: Caption describing the figure.*
 
 Durant l'atelier, nous allons utiliser un outil en ligne, le Faust IDE, qui va nous permettre d'écrire et de faire fonctionner nos programmes Faust directement dans un navigateur Web. Pour accéder à cet outil, il suffit d'ouvrir la page <a href="https://faustide.grame.fr" target="_faust">https://faustide.grame.fr</a> depuis son navigateur.
 
