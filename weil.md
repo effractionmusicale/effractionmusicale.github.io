@@ -1,6 +1,6 @@
 # ATELIER FAUST -- LYCEE SIMONE WEIL
 
-<img src="ciche.jpg" alt="workshop" width="100%"/>
+<img src="chiche.jpg" alt="workshop" width="100%"/>
 
 ## Pour suivre : <a href="https://effractionmusicale.fr/weil" >https://effractionmusicale.fr/weil</a>
 
