@@ -2,7 +2,7 @@
 
 ## Pour suivre : <a href="https://effractionmusicale.fr/weil" >https://effractionmusicale.fr/weil</a>
 
-<img src="qrc-workshop.png" alt="workshop" width="25%"/>
+<img src="qrc-weil.png" alt="workshop" width="25%"/>
 
 
 ## Objectif
