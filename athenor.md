@@ -180,7 +180,7 @@ Export de KISANA en PWA (Progressive Web App) :
 
 - [Site officiel de Faust](https://faust.grame.fr)
 - [Documentation de Faust](https://faustdoc.grame.fr)
-- [Tutoriels en ligne](https://faust.grame.fr/tutorials)
-- [Communauté Faust](https://faust.grame.fr/community)
-- 
+- [Tutoriels en ligne](https://faustdoc.grame.fr/workshops/2020-04-10-faust-101/)
+- [Cours Kadenze en ligne](https://www.kadenze.com/courses/real-time-audio-signal-processing-in-faust/info)
+- [Réalisations](https://faust.grame.fr/community/powered-by-faust/)
 
