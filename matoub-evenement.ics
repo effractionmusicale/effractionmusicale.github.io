@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//effractionmusicale//matoub//FR
+BEGIN:VEVENT
+UID:matoub-20250517@effractionmusicale
+DTSTAMP:20250517T120000Z
+DTSTART:20250517T120000Z
+DTEND:20250517T150000Z
+SUMMARY:Matoub Lounès, le rebelle : un hommage pour aujourd’hui
+LOCATION:Maison de l'université, https://maps.app.goo.gl/FiPPBAD5YiQmRazg7
+DESCRIPTION:Matoub Lounès, le rebelle : un hommage pour aujourd’hui\nMaison de l'université
+END:VEVENT
+END:VCALENDAR
