@@ -174,7 +174,7 @@ string(coef, freq, t60, level, trig) = noise*level
 
 ---
 
-## Intermezzo 6
+## Intermezzo
 
 ### Algorithmic and recursive descriptions
 
@@ -230,9 +230,9 @@ Pour ceux qui n'ont pas de smartphone Android, ils peuvent installer la version 
 
 ---
 
-## Performance Wahoo et Kisana avec IA
+## Performance Kisana avec IA
 
-Pour terminer l'atelier nous allons réaliser une petite improvisation musicale collective, en utilisant les deux instruments que nous avons construits. De plus, l'application Kisana sur mon poste va être pilotée par une IA (Claude Desktop), via le protocole MCP (Model Context Protocol). Un serveur MCP est créé automatiquement dans Kisana, et apparaît comme une nouvelle interface utilisateur, au même titre que Qt, HTTP, OSC et MIDI.
+Pour terminer l'atelier nous allons réaliser une petite improvisation musicale collective, en utilisant l'instrument Kisana que nous avons construit. De plus, l'application Kisana sur mon poste va être pilotée par une IA (Claude Desktop), via le protocole MCP (Model Context Protocol). Un serveur MCP est créé automatiquement dans Kisana, et apparaît comme une nouvelle interface utilisateur, au même titre que Qt, HTTP, OSC et MIDI.
 
 Pour que l'IA puisse piloter Kisana, **voici le prompt que l'on va lui donner :**
 
