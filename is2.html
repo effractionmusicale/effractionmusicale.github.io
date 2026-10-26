@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Yann Orlarey, EMERAUDE (INRIA/INSA/GRAME)" />
-  <title>Atelier Faust — IEEE IS2 2026</title>
+  <title>Faust workshop — IEEE IS2 2026</title>
   <style>
     html {
       line-height: 1.5;
@@ -277,11 +277,11 @@
   table { border-collapse: collapse; margin: 10px auto; }
   th, td { padding: 4px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
   blockquote { margin: 8px 0; padding-left: 14px; border-left: 3px solid var(--line); color: var(--muted); }
-  .enfaust { margin: 16px 0 0; padding: 10px 14px; background: var(--faust-bg); border-radius: 4px;
+  .infaust { margin: 16px 0 0; padding: 10px 14px; background: var(--faust-bg); border-radius: 4px;
              border-top: 26px solid var(--faust-bar); position: relative; font-size: .95em; }
-  .enfaust::before { content: "En Faust"; position: absolute; top: -23px; left: 14px; color: #fff;
+  .infaust::before { content: "In Faust"; position: absolute; top: -23px; left: 14px; color: #fff;
                      font-weight: 600; font-size: 14px; }
-  .enfaust p { margin: 0; }
+  .infaust p { margin: 0; }
   a.fcbtn { display: inline-block; margin-top: 6px; padding: 6px 12px; background: var(--teal); color: #fff;
             border-radius: 4px; text-decoration: none; font-size: 14px; font-weight: 600; }
   a.fcbtn:hover, a.fcbtn:focus-visible { background: var(--orange); }
@@ -302,32 +302,31 @@
 </head>
 <body>
 <nav class="topbar">
-  <strong>Atelier Faust — IEEE IS2 2026, Cannes</strong>
+  <strong>Faust workshop — IEEE IS2 2026, Cannes</strong>
   <a href="https://effractionmusicale.fr/20261030-faust-IS2.pdf">Slides (PDF)</a>
   <a href="https://orlarey.github.io/faustcode/" target="_faust">faustcode</a>
 </nav>
 <header id="title-block-header">
-<h1 class="title">Faust : composer des programmes</h1>
-<p class="subtitle">Atelier — IEEE IS2 2026</p>
+<h1 class="title">Faust: Composing Programs</h1>
+<p class="subtitle">Workshop — IEEE IS2 2026</p>
 <p class="author">Yann Orlarey, EMERAUDE (INRIA/INSA/GRAME)</p>
-<p class="date">Cannes, 30 octobre 2026</p>
+<p class="date">Cannes, October 30, 2026</p>
 </header>
-<section id="bienvenue" class="level1">
-<h1>Bienvenue</h1>
-<section id="avant-de-commencer" class="level2">
-<h2>Avant de commencer</h2>
+<section id="welcome" class="level1">
+<h1>Welcome</h1>
+<section id="before-we-start" class="level2">
+<h2>Before we start</h2>
 <ul>
-<li>Un navigateur suffit : ordinateur <strong>ou</strong>
+<li>All you need is a browser: laptop <strong>or</strong>
 smartphone</li>
-<li>Chaque exemple a son QR code : scannez, jouez, modifiez</li>
-<li>Pas d’écouteurs : nous jouerons <strong>ensemble</strong></li>
-<li>iPhone : jouez avec les QR codes Wahoo et Kisana (applications
-web)</li>
+<li>Each example has its QR code: scan, play, modify</li>
+<li>No headphones: we will play <strong>together</strong></li>
+<li>iPhone: play with the Wahoo and Kisana QR codes (web apps)</li>
 </ul>
 <div class="columns">
 <div class="column">
 <p><img src="is2/qr-is2.png" class="qr" /></p>
-<p>Les slides et les exemples<br />
+<p>Slides and examples<br />
 <a
 href="https://effractionmusicale.fr/is2">effractionmusicale.fr/is2</a></p>
 </div><div class="column">
@@ -339,67 +338,66 @@ href="https://orlarey.github.io/faustcode/">orlarey.github.io/faustcode</a></p>
 </div>
 </section>
 </section>
-<section id="faust-en-5-minutes" class="level1">
-<h1>Faust en 5 minutes</h1>
-<section id="quest-ce-que-faust" class="level2">
-<h2>Qu’est-ce que Faust ?</h2>
+<section id="faust-in-5-minutes" class="level1">
+<h1>Faust in 5 minutes</h1>
+<section id="what-is-faust" class="level2">
+<h2>What is Faust?</h2>
 <ul>
-<li>Un <strong>langage fonctionnel</strong> dédié au traitement du
-signal audio temps réel</li>
-<li>Conçu au GRAME (Lyon) au début des années 2000 ; libre (GPL /
+<li>A <strong>functional language</strong> dedicated to real-time audio
+signal processing</li>
+<li>Designed at GRAME (Lyon) in the early 2000s; free software (GPL /
 LGPL)</li>
-<li>Un programme Faust décrit un <strong>circuit</strong> : une fonction
-de signaux vers des signaux</li>
-<li>Le compilateur produit du code optimisé : C++, C, Rust, WebAssembly,
+<li>A Faust program describes a <strong>circuit</strong>: a function
+from signals to signals</li>
+<li>The compiler generates optimized code: C++, C, Rust, WebAssembly,
 LLVM, VHDL, Cmajor…</li>
-<li>… et des applications complètes grâce aux <em>architectures</em> :
-plugins, PWA, Android, iOS, Bela, Daisy, ESP32, Teensy, OWL, FPGA…</li>
+<li>… and complete applications thanks to <em>architectures</em>:
+plugins, PWAs, Android, iOS, Bela, Daisy, ESP32, Teensy, OWL, FPGA…</li>
 </ul>
 </section>
-<section id="un-premier-programme" class="level2">
-<h2>Un premier programme</h2>
+<section id="a-first-program" class="level2">
+<h2>A first program</h2>
 <pre class="faust"><code>import(&quot;stdfaust.lib&quot;);
 process = hslider(&quot;freq&quot;, 440, 50, 2000, 1) : os.osc : *(0.2);</code></pre>
-<p><img src="is2/premier.svg" class="diagram" /></p>
+<p><img src="is2/first.svg" class="diagram" /></p>
 <p><a
-href="https://orlarey.github.io/faustcode/?code=DYvLCoAgEADvfcWyJw0RE7sUfUz5IMHQXPv_9jDDXCY_rfYhkEZI50dDl3yh3KfWq49EcMBNJYfYBaYeX1TgnFGwMtYY9iJhg0q6kueYhdGW9x8&amp;name=premier&amp;view=run"
-class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
+href="https://orlarey.github.io/faustcode/?code=DYvLCoAgEADvfcWyJw0RE7sUfUz5IMHQXPv_9jDDXCY_rfYhkEZI50dDl3yh3KfWq49EcMBNJYfYBaYeX1TgnFGwMtYY9iJhg0q6kueYhdGW9x8&amp;name=first&amp;view=run"
+class="fcbtn" target="_faust">Open in faustcode</a></p>
 <ul>
-<li><code>process</code> est le point d’entrée, comme <code>main</code>
-en C</li>
-<li>Le programme se lit comme le circuit : slider <code>:</code>
-oscillateur <code>:</code> gain</li>
-<li>L’interface graphique est <strong>déduite</strong> du programme</li>
+<li><code>process</code> is the entry point, like <code>main</code> in
+C</li>
+<li>The program reads like the circuit: slider <code>:</code> oscillator
+<code>:</code> gain</li>
+<li>The user interface is <strong>derived</strong> from the program</li>
 </ul>
 </section>
-<section id="à-vous-wahoo-sur-votre-smartphone" class="level2">
-<h2>À vous : Wahoo sur votre smartphone</h2>
+<section id="your-turn-wahoo-on-your-smartphone" class="level2">
+<h2>Your turn: Wahoo on your smartphone</h2>
 <p><img src="is2/wahoo.svg" class="diagram" /></p>
 <div class="columns">
 <div class="column" style="width:62%;">
 <ul>
-<li>Scie, deux filtres résonants modulés par des LFO, écho, limiteur :
-20 lignes de Faust</li>
-<li>Inclinez le téléphone : <code>[acc: …]</code> relie deux sliders aux
-<strong>accéléromètres</strong></li>
-<li>Même source : navigateur, PWA, application Android</li>
+<li>Sawtooth, two resonant filters modulated by LFOs, echo, limiter: 20
+lines of Faust</li>
+<li>Tilt the phone: <code>[acc: …]</code> maps two sliders to the
+<strong>accelerometers</strong></li>
+<li>Same source: browser, PWA, Android app</li>
 </ul>
 <p><a
 href="https://orlarey.github.io/faustcode/?code=dVLBbsMgDL3nK6ycSJpF0Dbt1G4_scsO0xTRhDRINGRAt9-fDVXVVioHQ5z3nh82veqMdAomeVKQf8rR2nyf6dNsXWC5D_0gzz7URh_yYp9lg1M_APAOoze6V47llMkraHgFK047BoHQo9TTPZIyiOS1wIAgOvIEDSpCD-cQ7ETIoPICdqCmWvbescSplxReK1gi6deaM1q-0U-ZWGHzUCEzyfgNOma-ZNftgMMKXgTHXfDvyG8Ss4L1VcI4OR3v6qVMkhAPEqvYhtQPftGAEphYUBdIbrAi3tn62gxtcBrFjGLRVlGiBViQkYhcPkWWgpRv4dnsbKe8TwQv_4K1YWRJloqX1N0MLuttB4OunfJ2MjMjV2W614Im2tAsy9TY6srBdc9ZPuNcKTjKYVBdQH_pgPZm6ZjGYVb4r1bdaFkacmz-tinoAXQWn95JB-VaIbab9mPdevxQdp_9Aw&amp;name=wahoo&amp;view=run"
-class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
+class="fcbtn" target="_faust">Open in faustcode</a></p>
 </div><div class="column" style="width:38%;">
 <p><img src="is2/qr-wahoo.png" class="qr" /></p>
 </div>
 </div>
 </section>
 </section>
-<section id="doù-vient-faust" class="level1">
-<h1>D’où vient Faust ?</h1>
-<section id="systèmes-de-réécriture-axel-thue-1914" class="level2">
-<h2>Systèmes de réécriture (Axel Thue, 1914)</h2>
-<p>Décrire des transformations par de simples <strong>règles de
-remplacement</strong>. Une rangée de grains de café, et trois règles
-:</p>
+<section id="where-does-faust-come-from" class="level1">
+<h1>Where does Faust come from?</h1>
+<section id="rewriting-systems-axel-thue-1914" class="level2">
+<h2>Rewriting systems (Axel Thue, 1914)</h2>
+<p>Describing transformations with simple <strong>replacement
+rules</strong>. A row of coffee beans, and three rules:</p>
 <div class="center">
 <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>○</mo><mo>○</mo><mi>●</mi><mi>●</mi><mo>○</mo><mo>○</mo><mi>●</mi><mi>●</mi></mrow><annotation encoding="application/x-tex">○○●●○○●●</annotation></semantics></math></p>
 <table>
@@ -477,7 +475,7 @@ style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/M
 <tr class="even">
 <td
 style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>○</mo><annotation encoding="application/x-tex">○</annotation></semantics></math></td>
-<td style="text-align: right;">forme normale</td>
+<td style="text-align: right;">normal form</td>
 </tr>
 </tbody>
 </table>
@@ -499,123 +497,120 @@ style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/M
 <tr class="odd">
 <td
 style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>○</mo><mo>○</mo><mo>○</mo><mo>○</mo><mo>○</mo><mo>○</mo></mrow><annotation encoding="application/x-tex">○○○○○○</annotation></semantics></math></td>
-<td style="text-align: right;">forme normale</td>
+<td style="text-align: right;">normal form</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Deux ordres d’application, deux formes normales : ce système n’est
-pas <strong>confluent</strong>. Un système confluent définit un
-calcul.</p>
+<p>Two orders of application, two normal forms: this system is not
+<strong>confluent</strong>. A confluent system defines a
+computation.</p>
 </div>
 </div>
-<div class="enfaust">
-<p>Des règles de réécriture (<em>pattern matching</em>), évaluées à la
-compilation, transforment des circuits. Exemples plus loin.</p>
+<div class="infaust">
+<p>Rewriting rules (<em>pattern matching</em>), evaluated at compile
+time, transform circuits. Examples later on.</p>
 </div>
 </section>
-<section id="logique-combinatoire-moses-schönfinkel-1924"
-class="level2">
-<h2>Logique combinatoire (Moses Schönfinkel, 1924)</h2>
+<section id="combinatory-logic-moses-schönfinkel-1924" class="level2">
+<h2>Combinatory logic (Moses Schönfinkel, 1924)</h2>
 <div class="columns">
 <div class="column" style="width:30%;">
 <p><img src="is2/schonfinkel.png" /></p>
 </div><div class="column" style="width:70%;">
 <ul>
 <li>M. Schönfinkel, <em>Über die Bausteine der mathematischen
-Logik</em>, 1924 ; puis H. B. Curry</li>
-<li>Idée : se passer complètement des <strong>variables</strong></li>
-<li>Trois combinateurs suffisent :</li>
+Logik</em>, 1924; then H. B. Curry</li>
+<li>Idea: do away with <strong>variables</strong> altogether</li>
+<li>Three combinators suffice:</li>
 </ul>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mspace width="0.167em"></mspace><mi>x</mi><mspace width="0.167em"></mspace><mi>y</mi><mspace width="0.167em"></mspace><mi>z</mi><mo>→</mo><mi>x</mi><mspace width="0.167em"></mspace><mi>z</mi><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mspace width="0.167em"></mspace><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="2.0em"></mspace><mi>K</mi><mspace width="0.167em"></mspace><mi>x</mi><mspace width="0.167em"></mspace><mi>y</mi><mo>→</mo><mi>x</mi><mspace width="2.0em"></mspace><mi>I</mi><mspace width="0.167em"></mspace><mi>x</mi><mo>→</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">S\,x\,y\,z \to x\,z\,(y\,z) \qquad K\,x\,y \to x \qquad I\,x \to x</annotation></semantics></math></p>
 </div>
 </div>
-<div class="enfaust">
-<p><code>_</code> (identité), <code>!</code> (coupure) et les opérateurs
-de composition suffisent à assembler des circuits <strong>sans nommer
-les signaux</strong>.</p>
+<div class="infaust">
+<p><code>_</code> (identity), <code>!</code> (cut) and the composition
+operators are enough to assemble circuits <strong>without naming
+signals</strong>.</p>
 </div>
 </section>
-<section id="lambda-calcul-alonzo-church-1936" class="level2">
-<h2>Lambda-calcul (Alonzo Church, 1936)</h2>
+<section id="lambda-calculus-alonzo-church-1936" class="level2">
+<h2>Lambda calculus (Alonzo Church, 1936)</h2>
 <div class="columns">
 <div class="column" style="width:30%;">
 <p><img src="is2/alonzo-church.jpeg" /></p>
 </div><div class="column" style="width:70%;">
 <ul>
 <li>A. Church, <em>An Unsolvable Problem of Elementary Number
-Theory</em>, 1936 ; puis <em>The Calculi of Lambda-Conversion</em>,
+Theory</em>, 1936; then <em>The Calculi of Lambda-Conversion</em>,
 1941</li>
-<li>Un langage réduit à l’essentiel : <strong>abstraction</strong> et
+<li>A language reduced to its essence: <strong>abstraction</strong> and
 <strong>application</strong></li>
-<li>Les fonctions sont des valeurs comme les autres</li>
+<li>Functions are values like any other</li>
 </ul>
 <pre class="faust"><code>square = \(x).(x*x);      // abstraction
 process = square(0.5);     // application</code></pre>
 </div>
 </div>
-<div class="enfaust">
-<p>Les circuits sont des valeurs comme les autres : on les passe en
-argument, on les renvoie, on les assemble. Ci-dessus, une abstraction et
-une application écrites en Faust.</p>
+<div class="infaust">
+<p>Circuits are values like any other: they can be passed as arguments,
+returned and assembled. Above, an abstraction and an application written
+in Faust.</p>
 </div>
 </section>
-<section id="le-pipe-unix-doug-mcilroy-1964" class="level2">
-<h2>Le pipe Unix (Doug McIlroy, 1964)</h2>
+<section id="the-unix-pipe-doug-mcilroy-1964" class="level2">
+<h2>The Unix pipe (Doug McIlroy, 1964)</h2>
 <div class="columns">
 <div class="column" style="width:30%;">
 <p><img src="is2/mcilroy.jpg" /></p>
-<p>Photo : Denise Panyik-Dale, CC BY 2.0</p>
+<p>Photo: Denise Panyik-Dale, CC BY 2.0</p>
 </div><div class="column" style="width:70%;">
 <blockquote>
 <p><em>We should have some ways of coupling programs like garden hose —
 screw in another segment when it becomes necessary to massage data in
 another way.</em></p>
-<p>M. D. McIlroy, note interne des Bell Labs, 11 octobre 1964</p>
+<p>M. D. McIlroy, Bell Labs internal memo, October 11, 1964</p>
 </blockquote>
 <ul>
-<li>L’idée devient le pipe <code>|</code> d’Unix : la sortie d’un
-programme alimente l’entrée du suivant</li>
-<li>Des programmes écrits sans se connaître se composent, grâce à une
-interface uniforme</li>
+<li>The idea becomes the Unix pipe <code>|</code>: the output of one
+program feeds the input of the next</li>
+<li>Programs written independently of each other compose, thanks to a
+uniform interface</li>
 </ul>
 </div>
 </div>
-<div class="enfaust">
-<p>Les cinq opérateurs de composition <code>A:B</code>,
-<code>A,B</code>, <code>A&lt;:B</code>, <code>A:&gt;B</code> et
-<code>A~B</code> sont des opérations de câblage ; <code>A:B</code> est
-le pipe.</p>
+<div class="infaust">
+<p>The five composition operators <code>A:B</code>, <code>A,B</code>,
+<code>A&lt;:B</code>, <code>A:&gt;B</code> and <code>A~B</code> are
+wiring operations; <code>A:B</code> is the pipe.</p>
 </div>
 </section>
-<section id="synthétiseur-modulaire-robert-moog-1964" class="level2">
-<h2>Synthétiseur modulaire (Robert Moog, 1964)</h2>
+<section id="modular-synthesizer-robert-moog-1964" class="level2">
+<h2>Modular synthesizer (Robert Moog, 1964)</h2>
 <div class="columns">
 <div class="column" style="width:46%;">
 <p><img src="is2/moog.jpg" /></p>
-<p>Brochure Moog Music, vers 1974, domaine public</p>
+<p>Moog Music brochure, c. 1974, public domain</p>
 </div><div class="column" style="width:54%;">
 <ul>
-<li>14 octobre 1964, convention de l’AES à New York :
-<em>Voltage-Controlled Electronic Music Modules</em></li>
-<li>Des modules indépendants (oscillateurs, amplificateurs, enveloppes)
-reliés par des <strong>câbles</strong></li>
-<li>La <strong>tension de commande</strong> : un signal peut piloter le
-réglage d’un autre module</li>
-<li>Trois jours après la note de McIlroy : composer par raccordement, en
-musique comme en informatique</li>
+<li>October 14, 1964, AES convention in New York: <em>Voltage-Controlled
+Electronic Music Modules</em></li>
+<li>Independent modules (oscillators, amplifiers, envelopes) connected
+by <strong>patch cords</strong></li>
+<li><strong>Control voltage</strong>: one signal can drive a parameter
+of another module</li>
+<li>Three days after McIlroy’s memo: composition by patching, in music
+as in computing</li>
 </ul>
 </div>
 </div>
-<div class="enfaust">
-<p>La <em>widget modulation</em> joue le rôle de la tension de commande
-: un signal module le réglage d’un circuit existant, sans modifier son
-code.</p>
+<div class="infaust">
+<p><em>Widget modulation</em> plays the role of control voltage: a
+signal modulates a parameter of an existing circuit, without changing
+its code.</p>
 </div>
 </section>
-<section id="fp-une-algèbre-de-programmes-john-backus-1977"
-class="level2">
-<h2>FP, une algèbre de programmes (John Backus, 1977)</h2>
+<section id="fp-an-algebra-of-programs-john-backus-1977" class="level2">
+<h2>FP, an algebra of programs (John Backus, 1977)</h2>
 <div class="columns">
 <div class="column" style="width:30%;">
 <p><img src="is2/john-backus.jpg" /></p>
@@ -623,8 +618,8 @@ class="level2">
 <ul>
 <li>J. Backus, <em>Can Programming Be Liberated from the von Neumann
 Style?</em>, Turing Award 1977</li>
-<li>Programmer en <strong>composant</strong> des fonctions, avec des
-lois algébriques</li>
+<li>Programming by <strong>composing</strong> functions, with algebraic
+laws</li>
 </ul>
 <table>
 <tbody>
@@ -640,29 +635,27 @@ lois algébriques</li>
 </table>
 </div>
 </div>
-<div class="enfaust">
-<p>Comme FP, Faust repose sur quelques formes de combinaison, ses cinq
-opérateurs, qui obéissent à des lois algébriques, par exemple
-<code>(A:B):C = A:(B:C)</code>. C’est l’algèbre de diagrammes de blocs
-de Faust (Orlarey, Fober, Letz, ICMC 2002).</p>
+<div class="infaust">
+<p>Like FP, Faust relies on a few combining forms, its five operators,
+which obey algebraic laws, e.g. <code>(A:B):C = A:(B:C)</code>. This is
+Faust’s block-diagram algebra (Orlarey, Fober, Letz, ICMC 2002).</p>
 </div>
 </section>
 </section>
-<section id="un-programme-est-un-circuit" class="level1">
-<h1>Un programme est un circuit</h1>
-<section id="trois-lectures-dun-même-programme" class="level2">
-<h2>Trois lectures d’un même programme</h2>
+<section id="a-program-is-a-circuit" class="level1">
+<h1>A program is a circuit</h1>
+<section id="three-readings-of-the-same-program" class="level2">
+<h2>Three readings of the same program</h2>
 <p><img src="is2/FaustRosettaStone.png" /></p>
 <ul>
-<li>Le code, le diagramme et la formule : les deux derniers sont
-produits par le compilateur</li>
-<li>Signal = fonction du temps ; circuit = fonction de signaux ;
-opérateur = fonction de circuits</li>
+<li>Code, diagram and formula: the last two are produced by the
+compiler</li>
+<li>Signal = function of time; circuit = function of signals; operator =
+function of circuits</li>
 </ul>
 </section>
-<section id="cinq-opérateurs-pour-assembler-des-circuits"
-class="level2">
-<h2>Cinq opérateurs pour assembler des circuits</h2>
+<section id="five-operators-to-assemble-circuits" class="level2">
+<h2>Five operators to assemble circuits</h2>
 <table>
 <colgroup>
 <col style="width: 17%" />
@@ -672,44 +665,44 @@ class="level2">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: center;">Opérateur</th>
-<th>Nom</th>
-<th>Exemple</th>
+<th style="text-align: center;">Operator</th>
+<th>Name</th>
+<th>Example</th>
 <th style="text-align: center;">Circuit</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"><code>A : B</code></td>
-<td>séquence</td>
+<td>sequential</td>
 <td><code>os.osc(440) : *(0.2)</code></td>
 <td style="text-align: center;"><img src="is2/op-seq.svg"
 class="diagram" /></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><code>A , B</code></td>
-<td>parallèle</td>
+<td>parallel</td>
 <td><code>os.osc(440), os.osc(660)</code></td>
 <td style="text-align: center;"><img src="is2/op-par.svg"
 class="diagram" /></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><code>A &lt;: B</code></td>
-<td>éclatement</td>
+<td>split</td>
 <td><code>1 &lt;: sin, cos</code></td>
 <td style="text-align: center;"><img src="is2/op-split.svg"
 class="diagram" /></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><code>A :&gt; B</code></td>
-<td>regroupement</td>
+<td>merge</td>
 <td><code>-8, 3 :&gt; abs</code></td>
 <td style="text-align: center;"><img src="is2/op-merge.svg"
 class="diagram" /></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><code>A ~ B</code></td>
-<td>récursion</td>
+<td>recursive</td>
 <td><code>+ ~ *(0.9)</code></td>
 <td style="text-align: center;"><img src="is2/op-rec.svg"
 class="diagram" /></td>
@@ -718,114 +711,113 @@ class="diagram" /></td>
 </table>
 </section>
 </section>
-<section id="composer-des-programmes" class="level1">
-<h1>Composer des programmes</h1>
-<section id="composer-comme-avec-le-pipe-unix" class="level2">
-<h2>Composer comme avec le pipe Unix</h2>
+<section id="composing-programs" class="level1">
+<h1>Composing programs</h1>
+<section id="composing-like-the-unix-pipe" class="level2">
+<h2>Composing like the Unix pipe</h2>
 <div class="sourceCode" id="cb3"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="kw">|</span> <span class="fu">grep</span> dsp <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div>
 <ul>
-<li>Trois programmes indépendants, écrits sans se connaître</li>
-<li>Ils se composent grâce à une interface uniforme : un flux de
-texte</li>
-<li><code>f : g</code> en Faust
+<li>Three independent programs, written without knowing each other</li>
+<li>They compose thanks to a uniform interface: a text stream</li>
+<li><code>f : g</code> in Faust
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>≈</mo><annotation encoding="application/x-tex">\approx</annotation></semantics></math>
-<code>f | g</code> en Unix
+<code>f | g</code> in Unix
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>≈</mo><annotation encoding="application/x-tex">\approx</annotation></semantics></math>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>∘</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">g \circ f</annotation></semantics></math>
-en mathématiques</li>
+in mathematics</li>
 </ul>
 </section>
-<section id="et-en-c" class="level2">
-<h2>Et en C++ ?</h2>
+<section id="what-about-c" class="level2">
+<h2>What about C++?</h2>
 <ul>
-<li>Deux programmes C++ = deux fonctions <code>main()</code></li>
-<li>Pour les combiner dans un troisième, il faut les
-<strong>réécrire</strong> :
+<li>Two C++ programs = two <code>main()</code> functions</li>
+<li>To combine them into a third one, you have to
+<strong>rewrite</strong> them:
 <ul>
-<li>les transformer en bibliothèques,</li>
-<li>définir une interface commune (tampons, formats, horloge),</li>
-<li>écrire le code d’assemblage et l’interface graphique</li>
+<li>turn them into libraries,</li>
+<li>define a common interface (buffers, formats, clock),</li>
+<li>write the glue code and the user interface</li>
 </ul></li>
-<li>Un programme C++ n’est pas une valeur du langage</li>
+<li>A C++ program is not a value of the language</li>
 </ul>
 </section>
-<section id="deux-programmes-indépendants" class="level2">
-<h2>Deux programmes indépendants</h2>
-<p><code>synth.dsp</code> : une scie dont on règle la fréquence</p>
+<section id="two-independent-programs" class="level2">
+<h2>Two independent programs</h2>
+<p><code>synth.dsp</code>: a sawtooth with adjustable frequency</p>
 <pre class="faust"><code>import(&quot;stdfaust.lib&quot;);
 freq = hslider(&quot;freq&quot;, 220, 50, 1000, 1);
 process = os.sawtooth(freq) * 0.2;</code></pre>
-<p><code>echo.dsp</code> : un écho avec rétroaction</p>
+<p><code>echo.dsp</code>: an echo with feedback</p>
 <pre class="faust"><code>import(&quot;stdfaust.lib&quot;);
 d  = hslider(&quot;delay&quot;, 0.25, 0, 1, 0.01);
 fb = hslider(&quot;feedback&quot;, 0.5, 0, 0.95, 0.01);
 process = + ~ (de.delay(ma.SR, d*ma.SR) * fb);</code></pre>
 </section>
-<section id="un-troisième-programme-component" class="level2">
-<h2>Un troisième programme : <code>component</code></h2>
+<section id="a-third-program-component" class="level2">
+<h2>A third program: <code>component</code></h2>
 <p><code>combo.dsp</code></p>
 <pre class="faust"><code>process = component(&quot;synth.dsp&quot;) : component(&quot;echo.dsp&quot;);</code></pre>
 <p><img src="is2/combo.svg" class="diagram" /></p>
 <ul>
-<li>Chaque programme devient un circuit, assemblé par l’opérateur
-<code>:</code></li>
-<li>Les interfaces sont <strong>fusionnées</strong> automatiquement :
+<li>Each program becomes a circuit, assembled with the <code>:</code>
+operator</li>
+<li>The user interfaces are <strong>merged</strong> automatically:
 <code>freq</code>, <code>delay</code>, <code>feedback</code></li>
 </ul>
 <p><a
 href="https://orlarey.github.io/faustcode/?code=bZBBDoIwEEX3PcWEVVHSVBIWSryEnqDQIRCBYls1xOjZnUIImrjoZH7zZ97PNN1grOeR87pSN-dF2xRRnDPmxt7XcATs7401fYe9hycDqCxe6bt2baPR8ijoKIE0lQlk9HZShkorAAZrSnSO7MYJpx7eGF_zMBHDBqRIc_YiFJa1-UPS8M3R2KqRQDSVUSVE6OUMqoqfSIi6UOVlcs9mKfbZl38NtoU3cI1iWs87Jc6nBPRmakLIqojnkOvIdBmx6AOE-IvM2Qc&amp;name=1-composition&amp;view=run"
-class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
+class="fcbtn" target="_faust">Open in faustcode</a></p>
 </section>
-<section id="tous-les-opérateurs-sappliquent" class="level2">
-<h2>Tous les opérateurs s’appliquent</h2>
-<pre class="faust"><code>// en parallèle : deux synthés indépendants, sortie stéréo
+<section id="all-the-operators-apply" class="level2">
+<h2>All the operators apply</h2>
+<pre class="faust"><code>// in parallel: two independent synths, stereo output
 process = hgroup(&quot;L&quot;, component(&quot;synth.dsp&quot;)),
           hgroup(&quot;R&quot;, component(&quot;synth.dsp&quot;));
 
-// une source, deux traitements
+// one source, two processing paths
 process = component(&quot;synth.dsp&quot;) &lt;: component(&quot;echo.dsp&quot;), _;
 
-// rétroaction entre programmes, à l&#39;échantillon près
+// sample-accurate feedback between programs
 process = component(&quot;synth.dsp&quot;)
         : + ~ (component(&quot;echo.dsp&quot;) : *(0.3));</code></pre>
 <ul>
-<li>Deux widgets de même chemin sont <strong>partagés</strong> : sans
-les <code>hgroup</code>, un seul slider <code>freq</code></li>
-<li>Composition <strong>à la compilation</strong> : le résultat est un
-seul programme optimisé</li>
-<li>Une boucle <code>~</code> coûte <strong>un échantillon</strong> de
-retard ; entre plugins d’un hôte audio, c’est au moins un bloc</li>
+<li>Two widgets with the same path are <strong>shared</strong>: without
+the <code>hgroup</code>s, a single <code>freq</code> slider</li>
+<li>Composition happens <strong>at compile time</strong>: the result is
+a single optimized program</li>
+<li>A <code>~</code> loop costs <strong>one sample</strong> of delay;
+between plugins in an audio host, at least one block</li>
 </ul>
 </section>
-<section id="à-vous-composer" class="level2">
-<h2>À vous : composer</h2>
+<section id="your-turn-compose" class="level2">
+<h2>Your turn: compose</h2>
 <div class="columns">
 <div class="column">
-<p>Dans un seul fichier, chaque programme devient un
-<code>environment</code> :</p>
+<p>In a single file, each program becomes an
+<code>environment</code>:</p>
 <pre class="faust"><code>synth = environment { ... };
 echo  = environment { ... };
 
 process = synth.process
         : echo.process;</code></pre>
-<p><code>component("f.dsp")</code> équivaut à
+<p><code>component("f.dsp")</code> is equivalent to
 <code>library("f.dsp").process</code></p>
 </div><div class="column">
 <p><img src="is2/qr-1-composition.png" class="qr" /></p>
 <p><a
 href="https://orlarey.github.io/faustcode/?code=bZBBDoIwEEX3PcWEVVHSVBIWSryEnqDQIRCBYls1xOjZnUIImrjoZH7zZ97PNN1grOeR87pSN-dF2xRRnDPmxt7XcATs7401fYe9hycDqCxe6bt2baPR8ijoKIE0lQlk9HZShkorAAZrSnSO7MYJpx7eGF_zMBHDBqRIc_YiFJa1-UPS8M3R2KqRQDSVUSVE6OUMqoqfSIi6UOVlcs9mKfbZl38NtoU3cI1iWs87Jc6nBPRmakLIqojnkOvIdBmx6AOE-IvM2Qc&amp;name=1-composition&amp;view=run"
-class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
+class="fcbtn" target="_faust">Open in faustcode</a></p>
 </div>
 </div>
 </section>
-<section id="réécriture-en-faust" class="level2">
-<h2>Réécriture en Faust</h2>
+<section id="rewriting-in-faust" class="level2">
+<h2>Rewriting in Faust</h2>
 <ul>
-<li>Calcul par <strong>règles</strong> : on remplace une expression qui
-<em>filtre</em> un motif par une autre</li>
-<li>En Faust, des règles évaluées <strong>à la compilation</strong>, qui
-filtrent la structure des circuits :</li>
+<li>Computing with <strong>rules</strong>: an expression that
+<em>matches</em> a pattern is replaced by another</li>
+<li>In Faust, rules evaluated <strong>at compile time</strong>, matching
+the structure of circuits:</li>
 </ul>
 <pre class="faust"><code>serial((x,xs)) = x : serial(xs);
 serial(x)      = x;
@@ -834,16 +826,16 @@ process = serial((fi.lowpass(2,2000),
                   fi.highpass(2,200), *(0.5)));</code></pre>
 <p><img src="is2/serial.svg" class="diagram" /></p>
 <ul>
-<li>Méta-langage Turing-complet : il fabrique des circuits, puis
-disparaît</li>
+<li>A Turing-complete meta-language: it builds circuits, then
+vanishes</li>
 </ul>
 <p><a
 href="https://orlarey.github.io/faustcode/?code=RczdCoMwDAXge58ieJVIKUXYjeLDdP7MQEdLU7GPvyBzu8x3zgm_U8wFWynL5g8pNvCzpbGRNbMPiNVUIYIJKgzwRZVfoV7Z2KQc51VEj3u5sQ3xTF4Ee9M758iA2s6v_Y9qHTr7INKXHw&amp;name=serial&amp;view=run"
-class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
+class="fcbtn" target="_faust">Open in faustcode</a></p>
 </section>
-<section id="réécriture-la-fft-de-julius-smith" class="level2">
-<h2>Réécriture : la FFT de Julius Smith</h2>
-<pre class="faust"><code>fftb(1) = _,_;                 // un nombre complexe (re, im)
+<section id="rewriting-julius-smiths-fft" class="level2">
+<h2>Rewriting: Julius Smith’s FFT</h2>
+<pre class="faust"><code>fftb(1) = _,_;                 // a complex number (re, im)
 fftb(N) = si.cbus(N)
         : (fftb(No2) &lt;: (si.cbus(No2), si.cbus(No2))),
           (fftb(No2) &lt;: (si.cbus(N) : twiddleOdd(N)))
@@ -851,122 +843,120 @@ fftb(N) = si.cbus(N)
 with { No2 = int(N)&gt;&gt;1; ... };</code></pre>
 <p><img src="is2/fft.svg" class="diagram" /></p>
 <ul>
-<li>FFT radix 2 de Cooley-Tukey en deux règles
-(<code>analyzers.lib</code>) ; le compilateur déplie la récursion : ici
-<code>fftb(4)</code></li>
+<li>Cooley-Tukey radix-2 FFT in two rules (<code>analyzers.lib</code>);
+the compiler unfolds the recursion: here <code>fftb(4)</code></li>
 </ul>
 <p><a
-href="https://orlarey.github.io/faustcode/?code=VZBNTsMwEIX3OcWoK7sKSRuxIpBlJVgEJNhXTuyAVSeOPLbCj7gLSzhHL8aYVKW1vPD3PG_8xnkOm80TOCH1KxQgFdwFowPCY6_9CzAxCPP2rhxmRjc8Bbf_kUF7BfsvQIXE389GYaL70TrPFuhlJwL6WL7gZdJ1vmFrDjewTbcHrCOiztomYIQrYLNuCw7XRMc7ElI4JU78X5zAYZ2ZYkM_aSmNupeSmJNSnTyYTHG0D3JTE4qiB09qVa1Lks6cdDkKx3Yp1HOOPhjWWmQT28UoqwvUwww8ppkbQxTIWmSrZS-yh9tlZ6zwJObzoeYlfJYJ7dHZViFS8d9Ql_Rjvw&amp;name=fft&amp;view=svg"
-class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
+href="https://orlarey.github.io/faustcode/?code=VZDNbsMgEITvfopVLoXIsROrp7j1MVJ7cCu19wgbrKJgY7Eg90d99y4lahPEgW_YWWYpS3gMRgeEl1H7txsEJ6R-31RwOLwCE5MwH5_KYWF0x3NwSoZeSfAWtKfaYBRmepyt82yFXg4ioI-1K15nw-A7tuNwD8f8eMY2Iuqi7wJG2ANLuq043BH93ZGQwyVx4v_iDM7ryhQb-kVLadSTlMSclObiwWyhKeGL3NSEoujJk9o0u5qkKyddzsKxUw5tyjEGw3qLbGGnGGW7QT0l4DFNagxRIGtVbNejKJ4f1oOxwpNYpkPLa_iuM9qzs71CpOLfoW7px34A&amp;name=fft&amp;view=svg"
+class="fcbtn" target="_faust">Open in faustcode</a></p>
 </section>
 </section>
-<section id="personnaliser-sans-modifier" class="level1">
-<h1>Personnaliser sans modifier</h1>
-<section id="la-substitution-explicite" class="level2">
-<h2>La substitution explicite</h2>
+<section id="customizing-without-modifying" class="level1">
+<h1>Customizing without modifying</h1>
+<section id="explicit-substitution" class="level2">
+<h2>Explicit substitution</h2>
 <pre class="faust"><code>process = component(&quot;synth.dsp&quot;)[freq = 110 + 50*os.osc(0.5);]
         : component(&quot;echo.dsp&quot;);</code></pre>
 <ul>
-<li><code>[ ... ]</code> <strong>redéfinit</strong> une définition
-interne du programme, sans toucher à son fichier</li>
-<li>Ici, le slider <code>freq</code> est remplacé par un LFO : il
-<strong>disparaît</strong> de l’interface</li>
-<li>Possible parce que chaque expression garde son <strong>environnement
-lexical</strong> (fermeture)</li>
+<li><code>[ ... ]</code> <strong>redefines</strong> an internal
+definition of the program, without touching its file</li>
+<li>Here, the <code>freq</code> slider is replaced by an LFO: it
+<strong>disappears</strong> from the interface</li>
+<li>Possible because each expression keeps its <strong>lexical
+environment</strong> (closure)</li>
 </ul>
 </section>
-<section id="substitution-et-répétition" class="level2">
-<h2>Substitution et répétition</h2>
+<section id="substitution-and-replication" class="level2">
+<h2>Substitution and replication</h2>
 <pre class="faust"><code>process = par(i, 4, component(&quot;synth.dsp&quot;)[freq = 110*(i+1);]) :&gt; _;</code></pre>
 <div class="columns">
 <div class="column">
-<p><img src="is2/additif.svg" class="diagram" /></p>
+<p><img src="is2/additive.svg" class="diagram" /></p>
 </div><div class="column">
 <ul>
-<li>Quatre copies du même programme, chacune réglée sur un
-harmonique</li>
-<li>Une synthèse additive en une ligne</li>
-<li>Le compilateur résout tout : il ne reste que les quatre
-oscillateurs</li>
+<li>Four copies of the same program, each tuned to a harmonic</li>
+<li>Additive synthesis in one line</li>
+<li>The compiler resolves everything: only the four oscillators
+remain</li>
 </ul>
 <p><a
-href="https://orlarey.github.io/faustcode/?code=bZDBboMwDIbveQqLU6BRFNA4bGh7iO1Y7RCIEVGBsCRbVVXds8-BTu2kHWLZ1m9_f2ynxfnIsxBNrz9DlKNts7xhLJzmOMAz4PxlvZsnnCOcGUDv8YPaQxitQc-zVGcCqkoJqOmVSqVIKwAW7zoMgeQuyKCP0bk48DSRQwFKVg27EAq7wf1DMnDPMTjqE4FoqqZIiJSrDdS3fywhmlZ3h1W9iZV8rO_0N2M7-AZuUK7r-aTl26sAU6xJMtm3-WbyNrJoz62ABwHrjfbXi5SlKrjdEeBdXsU5PL1A-t1vo2E_&amp;name=3-additif&amp;view=run"
-class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
+href="https://orlarey.github.io/faustcode/?code=bZDBboMwDIbveQqLU6BRFNA4bGh7iO1Y7RCIEVGBsCRbVVXds8-BTu2kHWLZ1m9_f2ynxfnIsxBNrz9DlKNts7xhLJzmOMAz4PxlvZsnnCOcGUDv8YPaQxitQc-zVGcCqkoJqOmVSqVIKwAW7zoMgeQuyKCP0bk48DSRQwFKVg27EAq7wf1DMnDPMTjqE4FoqqZIiJSrDdS3fywhmlZ3h1W9iZV8rO_0N2M7-AZuUK7r-aTl26sAU6xJMtm3-WbyNrJoz62ABwHrjfbXi5SlKrjdEeBdXsU5PL1A-t1vo2E_&amp;name=3-additive&amp;view=run"
+class="fcbtn" target="_faust">Open in faustcode</a></p>
 </div>
 </div>
 </section>
-<section id="à-vous-substituer" class="level2">
-<h2>À vous : substituer</h2>
+<section id="your-turn-substitute" class="level2">
+<h2>Your turn: substitute</h2>
 <div class="columns">
 <div class="column">
 <p><img src="is2/qr-2-substitution.png" class="qr" /></p>
-<p>Substitution par un LFO<br />
+<p>Substitution by an LFO<br />
 <a
 href="https://orlarey.github.io/faustcode/?code=bZDBboMwDIbveQqLU2AoCkgcOrSXaI_TDoEYgQqExWmnamqffQ6saiftEMuOfvv77WFanA8yoWA7c6KgxqFJ0loIusyhhzfA-Tx4N084B_gWAJ3HT_7uaRwsepnEOsmhLHUOFb9C6xh5BMDiXYtELHekyHwF50IvY0cKGWhV1uLKKGx79w_JwjPH4mguDOKuiiMjYq43UNf8sYRoG9MeV_Um1mpXPekfxl7gBtKiWsfLyajDPgebrUk02TXpZvLRsl7m_fcORaF5RqUz3tBRKxmY1h_qrn6FuNy9rMUP&amp;name=2-substitution&amp;view=run"
-class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
+class="fcbtn" target="_faust">Open in faustcode</a></p>
 </div><div class="column">
-<p><img src="is2/qr-3-additif.png" class="qr" /></p>
-<p>Synthèse additive<br />
+<p><img src="is2/qr-3-additive.png" class="qr" /></p>
+<p>Additive synthesis<br />
 <a
-href="https://orlarey.github.io/faustcode/?code=bZDBboMwDIbveQqLU6BRFNA4bGh7iO1Y7RCIEVGBsCRbVVXds8-BTu2kHWLZ1m9_f2ynxfnIsxBNrz9DlKNts7xhLJzmOMAz4PxlvZsnnCOcGUDv8YPaQxitQc-zVGcCqkoJqOmVSqVIKwAW7zoMgeQuyKCP0bk48DSRQwFKVg27EAq7wf1DMnDPMTjqE4FoqqZIiJSrDdS3fywhmlZ3h1W9iZV8rO_0N2M7-AZuUK7r-aTl26sAU6xJMtm3-WbyNrJoz62ABwHrjfbXi5SlKrjdEeBdXsU5PL1A-t1vo2E_&amp;name=3-additif&amp;view=run"
-class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
+href="https://orlarey.github.io/faustcode/?code=bZDBboMwDIbveQqLU6BRFNA4bGh7iO1Y7RCIEVGBsCRbVVXds8-BTu2kHWLZ1m9_f2ynxfnIsxBNrz9DlKNts7xhLJzmOMAz4PxlvZsnnCOcGUDv8YPaQxitQc-zVGcCqkoJqOmVSqVIKwAW7zoMgeQuyKCP0bk48DSRQwFKVg27EAq7wf1DMnDPMTjqE4FoqqZIiJSrDdS3fywhmlZ3h1W9iZV8rO_0N2M7-AZuUK7r-aTl26sAU6xJMtm3-WbyNrJoz62ABwHrjfbXi5SlKrjdEeBdXsU5PL1A-t1vo2E_&amp;name=3-additive&amp;view=run"
+class="fcbtn" target="_faust">Open in faustcode</a></p>
 </div>
 </div>
 </section>
 </section>
-<section id="la-widget-modulation" class="level1">
-<h1>La <em>widget modulation</em></h1>
-<section id="le-problème" class="level2">
-<h2>Le problème</h2>
+<section id="widget-modulation" class="level1">
+<h1><em>Widget modulation</em></h1>
+<section id="the-problem" class="level2">
+<h2>The problem</h2>
 <ul>
-<li>Je veux moduler la fréquence de <code>synth.dsp</code> avec un
+<li>I want to modulate the frequency of <code>synth.dsp</code> with an
 LFO</li>
-<li>Le slider <code>freq</code> est <strong>à l’intérieur</strong> du
-programme : aucune entrée ne permet d’agir dessus</li>
-<li>La substitution le remplace, mais je perds le contrôle manuel</li>
-<li>Sans mécanisme dédié, il faut <strong>modifier le code</strong> du
-programme</li>
+<li>The <code>freq</code> slider is <strong>inside</strong> the program:
+no input gives access to it</li>
+<li>Substitution replaces it, but I lose manual control</li>
+<li>Without a dedicated mechanism, the program’s <strong>code must be
+modified</strong></li>
 </ul>
 </section>
-<section id="moduler-un-widget-de-lextérieur" class="level2">
-<h2>Moduler un widget de l’extérieur</h2>
+<section id="modulating-a-widget-from-the-outside" class="level2">
+<h2>Modulating a widget from the outside</h2>
 <pre class="faust"><code>[&quot;freq&quot; -&gt; component(&quot;synth.dsp&quot;)]</code></pre>
 <ul>
-<li>Ajoute une <strong>entrée</strong> au circuit, qui module le slider
-<code>freq</code></li>
-<li>Par défaut, le signal de modulation <strong>multiplie</strong> la
-valeur du slider</li>
-<li>Le code de <code>synth.dsp</code> n’est pas modifié</li>
+<li>Adds an <strong>input</strong> to the circuit, which modulates the
+<code>freq</code> slider</li>
+<li>By default, the modulation signal <strong>multiplies</strong> the
+slider value</li>
+<li>The code of <code>synth.dsp</code> is left unchanged</li>
 </ul>
 <table>
 <thead>
 <tr class="header">
-<th>Forme</th>
-<th>Effet</th>
+<th>Form</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><code>["freq" -&gt; C]</code></td>
-<td>nouvelle entrée, combinée par <code>*</code></td>
+<td>new input, combined with <code>*</code></td>
 </tr>
 <tr class="even">
 <td><code>["freq":+ -&gt; C]</code></td>
-<td>nouvelle entrée, combinée par <code>+</code></td>
+<td>new input, combined with <code>+</code></td>
 </tr>
 <tr class="odd">
 <td><code>["freq":*(lfo) -&gt; C]</code></td>
-<td>modulation interne, sans nouvelle entrée</td>
+<td>internal modulation, no new input</td>
 </tr>
 <tr class="even">
 <td><code>["freq":440 -&gt; C]</code></td>
-<td>le slider est remplacé par une constante</td>
+<td>the slider is replaced by a constant</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="à-vous-moduler" class="level2">
-<h2>À vous : moduler</h2>
+<section id="your-turn-modulate" class="level2">
+<h2>Your turn: modulate</h2>
 <div class="columns">
 <div class="column">
 <pre class="faust"><code>lfo = 1 + 0.5*os.osc(
@@ -979,31 +969,31 @@ process = [&quot;freq&quot;:*(lfo)
 <p><img src="is2/qr-4-modulation.png" class="qr" /></p>
 <p><a
 href="https://orlarey.github.io/faustcode/?code=bZDBTsQgEIbvPMWkJ6hdQmt6cBv3IfRoPNAypI1tWQE1G6PP7kDVXRMPTGbgn_l-ZlqOzkdehGisfglRzlNfiI6xcFrjCLeA6-vk3brgGuGdAViPz3Q9hnky6HmR6qKCplEVtHRqpVKkEQBH7wYMgeQuyKDfonNx5KlDQAlKNh37IBQOo_uHZOCSY3DWJwJRV0uREClXG8j2fywhml4PT1m9iZW8aS_0Z2NX8AncoMzj-aLl_V0FpsxJMml7sZmcbfJYUwPNLOk_Lgz8F0mvRLtOCPLVZGItqPVMethWtS85iQXsDpBXLL8Vj7CHtIifumNf&amp;name=4-modulation&amp;view=run"
-class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
+class="fcbtn" target="_faust">Open in faustcode</a></p>
 </div>
 </div>
 </section>
 </section>
-<section id="démo-une-ia-un-dsl-et-une-corne-de-brume" class="level1">
-<h1>Démo : une IA, un DSL et une corne de brume</h1>
-<section id="le-défi" class="level2">
-<h2>Le défi</h2>
+<section id="demo-an-ai-a-dsl-and-a-foghorn" class="level1">
+<h1>Demo: an AI, a DSL and a foghorn</h1>
+<section id="the-challenge" class="level2">
+<h2>The challenge</h2>
 <ul>
-<li>Reproduire en Faust le son d’une <strong>corne de brume</strong> à
-partir d’un enregistrement (22 s)</li>
-<li>Écoutons la cible</li>
-<li>Difficulté : un modèle de langage <strong>n’entend pas</strong>
+<li>Reproduce the sound of a <strong>foghorn</strong> in Faust from a
+recording (22 s)</li>
+<li>Let’s listen to the target</li>
+<li>The difficulty: a language model <strong>cannot hear</strong>
 <ul>
-<li>il peut raisonner sur un son, écrire du DSP, mesurer un
-spectre…</li>
-<li>… mais le jugement « est-ce que ça sonne juste ? » lui échappe</li>
+<li>it can reason about a sound, write DSP code, measure a
+spectrum…</li>
+<li>… but the judgment “does it sound right?” is beyond its reach</li>
 </ul></li>
-<li>Question : quelle <strong>rétroaction</strong> compense au mieux
-cette surdité ?</li>
+<li>The question: which <strong>feedback</strong> best makes up for this
+deafness?</li>
 </ul>
 </section>
-<section id="le-dispositif" class="level2">
-<h2>Le dispositif</h2>
+<section id="the-setup" class="level2">
+<h2>The setup</h2>
 <table>
 <colgroup>
 <col style="width: 50%" />
@@ -1011,36 +1001,36 @@ cette surdité ?</li>
 </colgroup>
 <thead>
 <tr class="header">
-<th>Acteur</th>
-<th>Rôle</th>
+<th>Actor</th>
+<th>Role</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>Claude Code</strong></td>
-<td>lit et écrit les fichiers, analyse en Python la cible et ses propres
-rendus</td>
+<td>reads and writes files, analyzes the target and its own renderings
+in Python</td>
 </tr>
 <tr class="even">
-<td><strong>faustcode</strong> (navigateur + pont MCP)</td>
-<td>compile et joue chaque version ; <code>render_audio</code> : rendu
-hors ligne, métriques par phase, WAV</td>
+<td><strong>faustcode</strong> (browser + MCP bridge)</td>
+<td>compiles and plays each version; <code>render_audio</code>: offline
+rendering, per-phase metrics, WAV</td>
 </tr>
 <tr class="odd">
 <td><strong>Faust</strong></td>
-<td>la notation : un modèle complet en
+<td>the notation: a complete model in
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>≈</mo><annotation encoding="application/x-tex">\approx</annotation></semantics></math>
-60 lignes, vérifié par le compilateur</td>
+60 lines, checked by the compiler</td>
 </tr>
 <tr class="even">
-<td><strong>Moi</strong></td>
-<td>l’oreille, quand l’IA la demande</td>
+<td><strong>Me</strong></td>
+<td>the ear, when the AI asks for it</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="la-consigne" class="level2">
-<h2>La consigne</h2>
+<section id="the-prompt" class="level2">
+<h2>The prompt</h2>
 <blockquote>
 <p>Model this foghorn in Faust. Do not fall into the trap of static
 additive synthesis — faithfully reproduce the full spectral evolution,
@@ -1053,62 +1043,63 @@ at every step. Decide on the synthesis approach based on what the
 measurements say, and let me know when you need my ear.</p>
 </blockquote>
 </section>
-<section id="démo" class="level2">
-<h2>Démo</h2>
-<p>En direct : Claude Code + faustcode</p>
+<section id="demo" class="level2">
+<h2>Demo</h2>
+<p>Live: Claude Code + faustcode</p>
 </section>
-<section id="ce-que-lifc-2026-nous-avait-appris" class="level2">
-<h2>Ce que l’IFC 2026 nous avait appris</h2>
+<section id="what-ifc-2026-taught-us" class="level2">
+<h2>What IFC 2026 taught us</h2>
 <ul>
-<li><strong>Le piège du
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mn>0</mn></msub><annotation encoding="application/x-tex">f_0</annotation></semantics></math></strong>
-: le 2<sup>e</sup> harmonique domine ; « le pic le plus fort » donne 262
-Hz au lieu de 131 Hz</li>
-<li><strong>Mesurer par phase</strong> (attaque / tenue / extinction) :
-la « meilleure » version avait une extinction de 48 ms contre 907 ms
-pour la cible, défaut invisible sur le spectre de la tenue</li>
-<li><strong>Les métriques rejoignent l’oreille</strong> : le classement
-chiffré des versions reproduisait mon jugement d’écoute</li>
-<li><strong>Additif affiné ou modèle physique ?</strong> C’est l’additif
-affiné qui l’a emporté : « différent, mais presque mieux »</li>
+<li><strong>The
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mn>0</mn></msub><annotation encoding="application/x-tex">f_0</annotation></semantics></math>
+trap</strong>: the 2nd harmonic dominates; “the strongest peak” gives
+262 Hz instead of 131 Hz</li>
+<li><strong>Measure by phase</strong> (attack / sustain / release): the
+“best” version had a 48 ms release against 907 ms for the target, a
+defect invisible in the sustain spectrum</li>
+<li><strong>Metrics agree with the ear</strong>: the numerical ranking
+of the versions matched my listening judgment</li>
+<li><strong>Refined additive or physical model?</strong> The refined
+additive model won: “different, but almost better”</li>
 </ul>
-<p>Version finale de l’IFC 2026 : <a
+<p>Final version from IFC 2026: <a
 href="https://orlarey.github.io/faustcode/?code=pVbNbttGEL7rKQY-tPwTvaRESbabAApqwIfGQR33FAjCilxZ25BcZpdU0hyCPkQfoFdd0ofQm_RJOrNL2ZKDnmIYlDScb-bbmdlvV1aN0q13ZtpizTvTxqVcnflXg8H5Obz4jj_Cw6s383u4eXN3C9uEwb9__gXbKYSQK61F3kpVGygENBtuBHi8bXn-Hn4ALUqBFh9D2Cg_S_5QK9PKHHhXSLWsRKtlbpbblOJtDeRyVQq4tN4wBIPr4LKGYr_7ff83rFQN3ppFkIu61Wr_TyEiuLm9g5yX-53xYfgSKdVG6O1-d4hxd_3L9fztNSCgwbedbjEBjGeVoYQXbFr1aSNoMKyA4eginjk0kMswYXEKxatzQ_H7NcH87R2k8Wj4chRnBkuh97ut0CsBYanqh04c0s_v7-e__nYNDTfAjRGfYaVlWfLa0tCqLNV6DaNkklCucTYdR4fcT6uEGbOvE5akRGKlsIq4Il4b2SqpBRQ_cvnQwZckY5X57pYP1swygBewMaUshPbO3rEFWr21qgteITNeCv9dV8v28ubz4iyCZMTiWQQTbM-I4YPFCU5foeVWPAuULKwVMeM4QyD-pwd_02jBi1P_dOGsLhtVxVDCCWIoF0EzhK7Qp92cQkcLZz0jJ5amFoLtzOxvRjBTqo_z16ew8cJZLSyZ9KixBSU95ubzKSZbOOtxTbKY2fWlRyTlw6adnyAnC7djXtl34O13eclP2utbIpnlkTyywFG8f96k6aIfUEfDFmpkkfSYHMr8QLvqGXS2IKvNNDvJhHNqZGwqpa4GH0X7zWBcYE6affCQ8v5rjUKASuQ4j9P_DfXAW-FCrbq2VTVNBluQ1coWrxqD7zwWTxKaktjWcDS1o5KO7ZKSzDXyws2bM6YJiwbQ_5GPSz6zi2duXtjYffT4jD3NB9KcHOMZm_XDcvLhjAlDqrdIM01wKrqKGmsJh8g3tHRDyza0ZEPLNbRUQ8u0T2RfJ6GlGVqWoSUZWo72ab-nFA4JPsGQiX1mR09rSRgWsWtsgRv10UupgOB20nmSMnSh_VmfOgx7h3TcO2yVzIVXdWXrox8u0ZMR3Eaw4nHL3wtPhlhe6pUPASgTK5N7ZPSDNQssDINgdwX10gXD0viomO5H1zx9L2rfh3PwRjELqJj96SXqrShV05Bg0k750AnQvJGk_ocTosEdEz1qPS9JhPc7MUAsJhZ1zI3GUUqm_STR3omAhu2bJM9ktU94CbJqutLgWQcfOklHUo7i_LVFCvqgu-h8_ZiQ8jEnbNlTKhKJ16pAH-SBK3dCE_SVcxKCflxqdKlVXCtpKPtaxiteF3iMGC8lxcRFpBljtKWWgVO5ABdBKXjrfaJuVdSjeuNZuQ0-UW1PTKRHqvjDToBnexQCJra7FAXIJi3yVany90K7n8jvQGGMM9QXr1es42rlCu8jxh5zBBDDDe_Qo6M7Q2Mid4RRhxB-VHE6WcDToi6gfIzWlJ05OjbJhLeEvvV-r6mkI7QYS3ODlsdSZZan2fBGFAevEHpUAAdJDqBvX4CtyaiOeFnIaW57aACH5gU0Lvhk8YUrQH_673ea023IMXYXgSdVLJwwwpfHS4S9d_iDXj5foD2uVK2Way2sCSfoIj1If2xbPsKlVPKTsGdkz_CnS_CWgZcMUZ192k6eixjQ76tBo1UuDImpAwZg5Z96hJfESrZCL5NkOlnejZeUnuIto-XV4D8&amp;name=boat_horn_v10&amp;view=run"
-class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
+class="fcbtn" target="_faust">Open in faustcode</a></p>
 </section>
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
-<section id="pourquoi-faust-permet-cela" class="level2">
-<h2>Pourquoi Faust permet cela</h2>
+<section id="why-faust-makes-this-possible" class="level2">
+<h2>Why Faust makes this possible</h2>
 <ul>
-<li><strong>Sémantique fonctionnelle</strong> : un programme est un
-circuit, et les circuits forment une algèbre (5 opérateurs)</li>
-<li><strong>Environnements lexicaux</strong> : <code>component</code>,
-<code>library</code>, <code>environment</code> et la substitution
-<code>[...]</code> manipulent des programmes comme des valeurs</li>
-<li><strong>Composition à la compilation</strong> : pas de coût à
-l’exécution, rétroaction à l’échantillon près</li>
-<li><strong>Interfaces déduites</strong> du code : elles se composent
-avec lui, et la <em>widget modulation</em> les rend modulables</li>
+<li><strong>Functional semantics</strong>: a program is a circuit, and
+circuits form an algebra (5 operators)</li>
+<li><strong>Lexical environments</strong>: <code>component</code>,
+<code>library</code>, <code>environment</code> and the
+<code>[...]</code> substitution handle programs as values</li>
+<li><strong>Compile-time composition</strong>: no runtime cost,
+sample-accurate feedback</li>
+<li><strong>User interfaces derived</strong> from the code: they compose
+with it, and <em>widget modulation</em> makes them modulable</li>
 </ul>
 </section>
-<section id="la-notation-outil-de-pensée" class="level2">
-<h2>La notation, outil de pensée</h2>
+<section id="notation-as-a-tool-of-thought" class="level2">
+<h2>Notation as a tool of thought</h2>
 <ul>
-<li>Une notation n’est pas qu’un moyen de communiquer ou de se souvenir
-: c’est un <strong>outil cognitif</strong></li>
-<li>L’algèbre a rendu manipulables des objets impensables en langue
-naturelle (équations différentielles, transformées)</li>
-<li>La notation musicale a rendu possibles les grandes formes, comme la
-symphonie</li>
-<li><strong>Faust est une notation pour les algorithmes de traitement du
-signal</strong>, directement reliée à leur implémentation efficace</li>
+<li>A notation is not merely a means of communicating or remembering: it
+is a <strong>cognitive tool</strong></li>
+<li>Algebra made it possible to manipulate objects unthinkable in
+natural language (differential equations, transforms)</li>
+<li>Musical notation made large forms possible, such as the
+symphony</li>
+<li><strong>Faust is a notation for signal processing
+algorithms</strong>, directly connected to their efficient
+implementation</li>
 </ul>
 </section>
-<section id="pourquoi-un-dsl-à-sémantique-forte-aide-aussi-les-ia"
+<section id="why-a-dsl-with-strong-semantics-also-helps-ai"
 class="level2">
-<h2>Pourquoi un DSL à sémantique forte aide aussi les IA</h2>
+<h2>Why a DSL with strong semantics also helps AI</h2>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -1124,50 +1115,49 @@ class="level2">
 </thead>
 <tbody>
 <tr class="odd">
-<td>Rapport sens / bruit syntaxique</td>
-<td>le code décrit l’algorithme</td>
-<td>tampons, boucles, structures</td>
+<td>Meaning / syntax ratio</td>
+<td>the code describes the algorithm</td>
+<td>buffers, loops, data structures</td>
 </tr>
 <tr class="even">
 <td>Composition</td>
 <td><code>A : B</code></td>
-<td>gestion explicite des tampons et des blocs</td>
+<td>explicit buffer and block management</td>
 </tr>
 <tr class="odd">
-<td>État</td>
-<td>pas d’état mutable explicite</td>
-<td>état mutable partout</td>
+<td>State</td>
+<td>no explicit mutable state</td>
+<td>mutable state everywhere</td>
 </tr>
 <tr class="even">
-<td>Taille</td>
-<td>quelques dizaines de lignes</td>
-<td>plusieurs fichiers, des centaines de lignes</td>
+<td>Size</td>
+<td>a few dozen lines</td>
+<td>several files, hundreds of lines</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>Le programme entier tient dans la <strong>fenêtre de
-contexte</strong></li>
-<li>Le compilateur <strong>vérifie</strong> et fournit des vues
-(diagrammes, signaux, erreurs) : autant de retours structurés</li>
+<li>The whole program fits in the <strong>context window</strong></li>
+<li>The compiler <strong>checks</strong> the code and provides views
+(diagrams, signals, errors): structured feedback</li>
 </ul>
 </section>
-<section id="en-résumé" class="level2">
-<h2>En résumé</h2>
+<section id="in-a-nutshell" class="level2">
+<h2>In a nutshell</h2>
 <div class="center">
-<p>Comme nous, les IA ont besoin de <strong>notations</strong> et de
-<strong>boucles de rétroaction</strong> pour créer.</p>
+<p>Like us, AIs need <strong>notations</strong> and <strong>feedback
+loops</strong> to create.</p>
 </div>
 <ul>
-<li>Une notation compacte, à la sémantique forte : Faust</li>
-<li>Un protocole pour agir et observer : MCP</li>
-<li>Des mesures pour remplacer l’oreille… et l’oreille humaine pour
-trancher</li>
+<li>A compact notation with strong semantics: Faust</li>
+<li>A protocol to act and observe: MCP</li>
+<li>Measurements to stand in for the ear… and the human ear to
+decide</li>
 </ul>
 </section>
-<section id="des-prompts-aux-plugins-lindustrie-passe-par-faust"
+<section id="from-prompts-to-plugins-the-industry-goes-through-faust"
 class="level2">
-<h2>Des prompts aux plugins : l’industrie passe par Faust</h2>
+<h2>From prompts to plugins: the industry goes through Faust</h2>
 <table>
 <colgroup>
 <col style="width: 24%" />
@@ -1179,61 +1169,60 @@ class="level2">
 <td style="text-align: center;"><img
 src="is2/powered-Pluginmaker.jpg" /></td>
 <td><strong>Pluginmaker.ai</strong></td>
-<td>plugins VST/AU créés à partir d’une description en langage
-naturel</td>
+<td>VST/AU plugins created from a natural-language description</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><img
 src="is2/powered-Stratus.png" /></td>
 <td><strong>Stratus</strong> (Chaos Audio)</td>
-<td><em>AI FX Builder</em> : des effets décrits par un prompt (depuis
-mars 2026)</td>
+<td><em>AI FX Builder</em>: effects described by a prompt (since March
+2026)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><img src="is2/powered-magda.png" /></td>
 <td><strong>MAGDA</strong></td>
-<td>effets écrits en Faust, panneau IA qui génère du Faust</td>
+<td>effects written in Faust, AI panel that generates Faust code</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><img
 src="is2/powered-incant-audio.png" /></td>
 <td><strong>Incant Audio</strong></td>
-<td>prompt → LLM → code Faust → effet VST3 temps réel</td>
+<td>prompt → LLM → Faust code → real-time VST3 effect</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><img
 src="is2/powered-persistent-faust.png" /></td>
 <td><strong>Persistent Faust</strong></td>
-<td>assistant GPT intégré pour écrire et améliorer du Faust</td>
+<td>built-in GPT assistant to write and improve Faust code</td>
 </tr>
 </tbody>
 </table>
-<p>Source : <a href="https://faust.grame.fr/community/powered-by-faust/"
+<p>Source: <a href="https://faust.grame.fr/community/powered-by-faust/"
 class="uri">https://faust.grame.fr/community/powered-by-faust/</a></p>
 </section>
-<section id="pour-aller-plus-loin" class="level2">
-<h2>Pour aller plus loin</h2>
+<section id="going-further" class="level2">
+<h2>Going further</h2>
 <div class="columns">
 <div class="column">
 <ul>
-<li>Site : <a href="https://faust.grame.fr"
+<li>Website: <a href="https://faust.grame.fr"
 class="uri">https://faust.grame.fr</a></li>
-<li>Éditeur en ligne : <a href="https://faustide.grame.fr"
+<li>Online editor: <a href="https://faustide.grame.fr"
 class="uri">https://faustide.grame.fr</a></li>
-<li>Documentation : <a href="https://faustdoc.grame.fr"
+<li>Documentation: <a href="https://faustdoc.grame.fr"
 class="uri">https://faustdoc.grame.fr</a></li>
-<li>Bibliothèques : <a href="https://faustlibraries.grame.fr"
+<li>Libraries: <a href="https://faustlibraries.grame.fr"
 class="uri">https://faustlibraries.grame.fr</a></li>
-<li>faustcode : <a href="https://orlarey.github.io/faustcode/"
+<li>faustcode: <a href="https://orlarey.github.io/faustcode/"
 class="uri">https://orlarey.github.io/faustcode/</a></li>
-<li>Atelier <em>widget modulation</em> : <a
+<li><em>Widget modulation</em> workshop (in French): <a
 href="https://effractionmusicale.fr/modulation"
 class="uri">https://effractionmusicale.fr/modulation</a></li>
 </ul>
-<p>Merci !</p>
+<p>Thank you!</p>
 </div><div class="column">
 <p><img src="is2/qr-kisana.png" class="qr" /></p>
-<p>Kisana, à jouer sur votre téléphone</p>
+<p>Kisana, to play on your phone</p>
 </div>
 </div>
 </section>
