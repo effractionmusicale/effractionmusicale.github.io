@@ -510,9 +510,8 @@ calcul.</p>
 </div>
 </div>
 <div class="enfaust">
-<p>On écrit en Faust des règles de réécriture (<em>pattern
-matching</em>) : évaluées à la compilation, elles transforment des
-circuits (voir « Réécriture en Faust »).</p>
+<p>Des règles de réécriture (<em>pattern matching</em>), évaluées à la
+compilation, transforment des circuits. Exemples plus loin.</p>
 </div>
 </section>
 <section id="logique-combinatoire-moses-schönfinkel-1924"
@@ -648,46 +647,6 @@ opérateurs, qui obéissent à des lois algébriques, par exemple
 de Faust (Orlarey, Fober, Letz, ICMC 2002).</p>
 </div>
 </section>
-<section id="réécriture-en-faust" class="level2">
-<h2>Réécriture en Faust</h2>
-<ul>
-<li>Calcul par <strong>règles</strong> : on remplace une expression qui
-<em>filtre</em> un motif par une autre</li>
-<li>En Faust, des règles évaluées <strong>à la compilation</strong>, qui
-filtrent la structure des circuits :</li>
-</ul>
-<pre class="faust"><code>serial((x,xs)) = x : serial(xs);
-serial(x)      = x;
-
-process = serial((fi.lowpass(2,2000),
-                  fi.highpass(2,200), *(0.5)));</code></pre>
-<p><img src="is2/serial.svg" class="diagram" /></p>
-<ul>
-<li>Méta-langage Turing-complet : il fabrique des circuits, puis
-disparaît</li>
-</ul>
-<p><a
-href="https://orlarey.github.io/faustcode/?code=RczdCoMwDAXge58ieJVIKUXYjeLDdP7MQEdLU7GPvyBzu8x3zgm_U8wFWynL5g8pNvCzpbGRNbMPiNVUIYIJKgzwRZVfoV7Z2KQc51VEj3u5sQ3xTF4Ee9M758iA2s6v_Y9qHTr7INKXHw&amp;name=serial&amp;view=run"
-class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
-</section>
-<section id="réécriture-la-fft-de-julius-smith" class="level2">
-<h2>Réécriture : la FFT de Julius Smith</h2>
-<pre class="faust"><code>fftb(1) = _,_;                 // un nombre complexe (re, im)
-fftb(N) = si.cbus(N)
-        : (fftb(No2) &lt;: (si.cbus(No2), si.cbus(No2))),
-          (fftb(No2) &lt;: (si.cbus(N) : twiddleOdd(N)))
-       :&gt; si.cbus(N)
-with { No2 = int(N)&gt;&gt;1; ... };</code></pre>
-<p><img src="is2/fft.svg" class="diagram" /></p>
-<ul>
-<li>FFT radix 2 de Cooley-Tukey en deux règles
-(<code>analyzers.lib</code>) ; le compilateur déplie la récursion : ici
-<code>fftb(4)</code></li>
-</ul>
-<p><a
-href="https://orlarey.github.io/faustcode/?code=VZBNTsMwEIX3OcWoK7sKSRuxIpBlJVgEJNhXTuyAVSeOPLbCj7gLSzhHL8aYVKW1vPD3PG_8xnkOm80TOCH1KxQgFdwFowPCY6_9CzAxCPP2rhxmRjc8Bbf_kUF7BfsvQIXE389GYaL70TrPFuhlJwL6WL7gZdJ1vmFrDjewTbcHrCOiztomYIQrYLNuCw7XRMc7ElI4JU78X5zAYZ2ZYkM_aSmNupeSmJNSnTyYTHG0D3JTE4qiB09qVa1Lks6cdDkKx3Yp1HOOPhjWWmQT28UoqwvUwww8ppkbQxTIWmSrZS-yh9tlZ6zwJObzoeYlfJYJ7dHZViFS8d9Ql_Rjvw&amp;name=fft&amp;view=svg"
-class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
-</section>
 </section>
 <section id="un-programme-est-un-circuit" class="level1">
 <h1>Un programme est un circuit</h1>
@@ -763,8 +722,8 @@ class="diagram" /></td>
 <h1>Composer des programmes</h1>
 <section id="composer-comme-avec-le-pipe-unix" class="level2">
 <h2>Composer comme avec le pipe Unix</h2>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="kw">|</span> <span class="fu">grep</span> dsp <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="kw">|</span> <span class="fu">grep</span> dsp <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div>
 <ul>
 <li>Trois programmes indépendants, écrits sans se connaître</li>
 <li>Ils se composent grâce à une interface uniforme : un flux de
@@ -859,6 +818,46 @@ href="https://orlarey.github.io/faustcode/?code=bZBBDoIwEEX3PcWEVVHSVBIWSryEnqDQ
 class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
 </div>
 </div>
+</section>
+<section id="réécriture-en-faust" class="level2">
+<h2>Réécriture en Faust</h2>
+<ul>
+<li>Calcul par <strong>règles</strong> : on remplace une expression qui
+<em>filtre</em> un motif par une autre</li>
+<li>En Faust, des règles évaluées <strong>à la compilation</strong>, qui
+filtrent la structure des circuits :</li>
+</ul>
+<pre class="faust"><code>serial((x,xs)) = x : serial(xs);
+serial(x)      = x;
+
+process = serial((fi.lowpass(2,2000),
+                  fi.highpass(2,200), *(0.5)));</code></pre>
+<p><img src="is2/serial.svg" class="diagram" /></p>
+<ul>
+<li>Méta-langage Turing-complet : il fabrique des circuits, puis
+disparaît</li>
+</ul>
+<p><a
+href="https://orlarey.github.io/faustcode/?code=RczdCoMwDAXge58ieJVIKUXYjeLDdP7MQEdLU7GPvyBzu8x3zgm_U8wFWynL5g8pNvCzpbGRNbMPiNVUIYIJKgzwRZVfoV7Z2KQc51VEj3u5sQ3xTF4Ee9M758iA2s6v_Y9qHTr7INKXHw&amp;name=serial&amp;view=run"
+class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
+</section>
+<section id="réécriture-la-fft-de-julius-smith" class="level2">
+<h2>Réécriture : la FFT de Julius Smith</h2>
+<pre class="faust"><code>fftb(1) = _,_;                 // un nombre complexe (re, im)
+fftb(N) = si.cbus(N)
+        : (fftb(No2) &lt;: (si.cbus(No2), si.cbus(No2))),
+          (fftb(No2) &lt;: (si.cbus(N) : twiddleOdd(N)))
+       :&gt; si.cbus(N)
+with { No2 = int(N)&gt;&gt;1; ... };</code></pre>
+<p><img src="is2/fft.svg" class="diagram" /></p>
+<ul>
+<li>FFT radix 2 de Cooley-Tukey en deux règles
+(<code>analyzers.lib</code>) ; le compilateur déplie la récursion : ici
+<code>fftb(4)</code></li>
+</ul>
+<p><a
+href="https://orlarey.github.io/faustcode/?code=VZBNTsMwEIX3OcWoK7sKSRuxIpBlJVgEJNhXTuyAVSeOPLbCj7gLSzhHL8aYVKW1vPD3PG_8xnkOm80TOCH1KxQgFdwFowPCY6_9CzAxCPP2rhxmRjc8Bbf_kUF7BfsvQIXE389GYaL70TrPFuhlJwL6WL7gZdJ1vmFrDjewTbcHrCOiztomYIQrYLNuCw7XRMc7ElI4JU78X5zAYZ2ZYkM_aSmNupeSmJNSnTyYTHG0D3JTE4qiB09qVa1Lks6cdDkKx3Yp1HOOPhjWWmQT28UoqwvUwww8ppkbQxTIWmSrZS-yh9tlZ6zwJObzoeYlfJYJ7dHZViFS8d9Ql_Rjvw&amp;name=fft&amp;view=svg"
+class="fcbtn" target="_faust">Ouvrir dans faustcode</a></p>
 </section>
 </section>
 <section id="personnaliser-sans-modifier" class="level1">
