@@ -267,7 +267,8 @@
   td img, td img.diagram { max-height: 80px; margin: 0 auto; }
   img[src*="powered-"] { width: 150px; max-height: none; }
   img.diagram { display: block; margin: 8px auto; max-height: 340px; }
-  img.qr { width: 200px; display: block; }
+  img.qr { width: 200px; display: block; margin: 0 auto; }
+  #avant-de-commencer .column { flex: 1; text-align: center; }
   figure { margin: 8px 0; text-align: center; }
   figcaption { display: none; }
   pre { background: var(--code-bg); padding: 10px 14px; border-radius: 4px; overflow-x: auto;
@@ -315,8 +316,6 @@
 <h1>Bienvenue</h1>
 <section id="avant-de-commencer" class="level2">
 <h2>Avant de commencer</h2>
-<div class="columns">
-<div class="column" style="width:64%;">
 <ul>
 <li>Un navigateur suffit : ordinateur <strong>ou</strong>
 smartphone</li>
@@ -325,13 +324,17 @@ smartphone</li>
 <li>iPhone : jouez avec les QR codes Wahoo et Kisana (applications
 web)</li>
 </ul>
-<p>Les slides et tous les exemples :</p>
-<p><a
+<div class="columns">
+<div class="column">
+<p><img src="is2/qr-is2.png" class="qr" /></p>
+<p>Les slides et les exemples<br />
+<a
 href="https://effractionmusicale.fr/is2">effractionmusicale.fr/is2</a></p>
-</div><div class="column" style="width:36%;">
+</div><div class="column">
 <p><img src="is2/qr-faustcode.png" class="qr" /></p>
-<p>orlarey.github.io/<br />
-<strong>faustcode</strong></p>
+<p>faustcode<br />
+<a
+href="https://orlarey.github.io/faustcode/">orlarey.github.io/faustcode</a></p>
 </div>
 </div>
 </section>
