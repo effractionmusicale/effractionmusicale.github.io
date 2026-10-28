@@ -767,7 +767,7 @@ operator</li>
 <code>freq</code>, <code>delay</code>, <code>feedback</code></li>
 </ul>
 <p><a
-href="https://orlarey.github.io/faustcode/?code=bZBBDoIwEEX3PcWEVVHSVBIWSryEnqDQIRCBYls1xOjZnUIImrjoZH7zZ97PNN1grOeR87pSN-dF2xRRnDPmxt7XcATs7401fYe9hycDqCxe6bt2baPR8ijoKIE0lQlk9HZShkorAAZrSnSO7MYJpx7eGF_zMBHDBqRIc_YiFJa1-UPS8M3R2KqRQDSVUSVE6OUMqoqfSIi6UOVlcs9mKfbZl38NtoU3cI1iWs87Jc6nBPRmakLIqojnkOvIdBmx6AOE-IvM2Qc&amp;name=1-composition&amp;view=run"
+href="https://orlarey.github.io/faustcode/?code=bVBLDoIwEN33FBNWRUlTSVgo8RJ6gpYOgQgU26IhRs_uFDaYuJjJ6-T90rYfrQs88cHUavJBdK1O0pIxPw-hgTPg8GidHXocArwYQO3wTufGd61Bx5P4TjLIc5lBQXOQMm6yALBTIKr1wqtnsDY0PLJT2IEUecneFINVY_-kGNhmGOzUTCGkKmiTfcRyDan1Tx1Eo1V1W9grWYpjseGvpfbwAW5QLNa8V-J6ycDsFhAL1jpdC47OVug9SZYfEVF-glg7wpJ9AQ&amp;name=1-composition&amp;view=run"
 class="fcbtn" target="_blank">Open in faustcode</a></p>
 </section>
 <section id="all-the-operators-apply" class="level2">
@@ -800,14 +800,14 @@ between plugins in an audio host, at least one block</li>
 <pre class="faust"><code>synth = environment { ... };
 echo  = environment { ... };
 
-process = synth.process
-        : echo.process;</code></pre>
+process = synth.out
+        : echo.out;</code></pre>
 <p><code>component("f.dsp")</code> is equivalent to
 <code>library("f.dsp").process</code></p>
 </div><div class="column">
 <p><img src="is2/qr-1-composition.png" class="qr" /></p>
 <p><a
-href="https://orlarey.github.io/faustcode/?code=bZBBDoIwEEX3PcWEVVHSVBIWSryEnqDQIRCBYls1xOjZnUIImrjoZH7zZ97PNN1grOeR87pSN-dF2xRRnDPmxt7XcATs7401fYe9hycDqCxe6bt2baPR8ijoKIE0lQlk9HZShkorAAZrSnSO7MYJpx7eGF_zMBHDBqRIc_YiFJa1-UPS8M3R2KqRQDSVUSVE6OUMqoqfSIi6UOVlcs9mKfbZl38NtoU3cI1iWs87Jc6nBPRmakLIqojnkOvIdBmx6AOE-IvM2Qc&amp;name=1-composition&amp;view=run"
+href="https://orlarey.github.io/faustcode/?code=bVBLDoIwEN33FBNWRUlTSVgo8RJ6gpYOgQgU26IhRs_uFDaYuJjJ6-T90rYfrQs88cHUavJBdK1O0pIxPw-hgTPg8GidHXocArwYQO3wTufGd61Bx5P4TjLIc5lBQXOQMm6yALBTIKr1wqtnsDY0PLJT2IEUecneFINVY_-kGNhmGOzUTCGkKmiTfcRyDan1Tx1Eo1V1W9grWYpjseGvpfbwAW5QLNa8V-J6ycDsFhAL1jpdC47OVug9SZYfEVF-glg7wpJ9AQ&amp;name=1-composition&amp;view=run"
 class="fcbtn" target="_blank">Open in faustcode</a></p>
 </div>
 </div>
@@ -881,7 +881,7 @@ environment</strong> (closure)</li>
 remain</li>
 </ul>
 <p><a
-href="https://orlarey.github.io/faustcode/?code=bZDBboMwDIbveQqLU6BRFNA4bGh7iO1Y7RCIEVGBsCRbVVXds8-BTu2kHWLZ1m9_f2ynxfnIsxBNrz9DlKNts7xhLJzmOMAz4PxlvZsnnCOcGUDv8YPaQxitQc-zVGcCqkoJqOmVSqVIKwAW7zoMgeQuyKCP0bk48DSRQwFKVg27EAq7wf1DMnDPMTjqE4FoqqZIiJSrDdS3fywhmlZ3h1W9iZV8rO_0N2M7-AZuUK7r-aTl26sAU6xJMtm3-WbyNrJoz62ABwHrjfbXi5SlKrjdEeBdXsU5PL1A-t1vo2E_&amp;name=3-additive&amp;view=run"
+href="https://orlarey.github.io/faustcode/?code=bVDBToUwELz3KyacCq9pCpGDEv0IPRoPhZbQCBTbPs2L0W93Cx6eiYfd7G5mZ2bXLZsPiRcxmVGfY5Kz64uyYyxe1jThHnZ9d8Gvi10TPhkwBvtG4ynOztjAi9wXAk2jBFqKWqmciQLw50RQH2XUH8n7NPGMLlFByaZjXyRjh8n_o2JwrWHsrC8kQlstZaLPtTpExv6PHWtNr4fXHX2Albxtr_CHqRO-wY2VOzVftHx6FDDVXmSDY18eBrfgBxsjrWw6cCdwI7D_5vn3E3WtKu5ORP4iibvE3QPyVbnp2A8&amp;name=3-additive&amp;view=run"
 class="fcbtn" target="_blank">Open in faustcode</a></p>
 </div>
 </div>
@@ -893,13 +893,13 @@ class="fcbtn" target="_blank">Open in faustcode</a></p>
 <p><img src="is2/qr-2-substitution.png" class="qr" /></p>
 <p>Substitution by an LFO<br />
 <a
-href="https://orlarey.github.io/faustcode/?code=bZDBboMwDIbveQqLU2AoCkgcOrSXaI_TDoEYgQqExWmnamqffQ6saiftEMuOfvv77WFanA8yoWA7c6KgxqFJ0loIusyhhzfA-Tx4N084B_gWAJ3HT_7uaRwsepnEOsmhLHUOFb9C6xh5BMDiXYtELHekyHwF50IvY0cKGWhV1uLKKGx79w_JwjPH4mguDOKuiiMjYq43UNf8sYRoG9MeV_Um1mpXPekfxl7gBtKiWsfLyajDPgebrUk02TXpZvLRsl7m_fcORaF5RqUz3tBRKxmY1h_qrn6FuNy9rMUP&amp;name=2-substitution&amp;view=run"
+href="https://orlarey.github.io/faustcode/?code=bVDLboMwELz7K1acDEWWQeKQovxEe6x6MHgRKMCmXqdVVLXf3jX0kEg5eDW2ZufhaTlTiDrj6Ad34WjmqcvyVim-rnGEI-D6OQVaF1wjfCuAIeCHPI88Tx6DztI9K6GubQmNnMraNEUCgC5RqMSG3VckiqNO7BwKsKZu1Y_YYD_SAxcPtx4eZ3cVE9lqZIp8wnY3Gbq7OIi-c_1pY-9kaw7NDX8P9QS_oD2aTVovzry-lOCLDaSAQ5fvAc-BemSWle1H3v77V5UVjcYW0o6412KWt-8miT9DKpVgq_4A&amp;name=2-substitution&amp;view=run"
 class="fcbtn" target="_blank">Open in faustcode</a></p>
 </div><div class="column">
 <p><img src="is2/qr-3-additive.png" class="qr" /></p>
 <p>Additive synthesis<br />
 <a
-href="https://orlarey.github.io/faustcode/?code=bZDBboMwDIbveQqLU6BRFNA4bGh7iO1Y7RCIEVGBsCRbVVXds8-BTu2kHWLZ1m9_f2ynxfnIsxBNrz9DlKNts7xhLJzmOMAz4PxlvZsnnCOcGUDv8YPaQxitQc-zVGcCqkoJqOmVSqVIKwAW7zoMgeQuyKCP0bk48DSRQwFKVg27EAq7wf1DMnDPMTjqE4FoqqZIiJSrDdS3fywhmlZ3h1W9iZV8rO_0N2M7-AZuUK7r-aTl26sAU6xJMtm3-WbyNrJoz62ABwHrjfbXi5SlKrjdEeBdXsU5PL1A-t1vo2E_&amp;name=3-additive&amp;view=run"
+href="https://orlarey.github.io/faustcode/?code=bVDBToUwELz3KyacCq9pCpGDEv0IPRoPhZbQCBTbPs2L0W93Cx6eiYfd7G5mZ2bXLZsPiRcxmVGfY5Kz64uyYyxe1jThHnZ9d8Gvi10TPhkwBvtG4ynOztjAi9wXAk2jBFqKWqmciQLw50RQH2XUH8n7NPGMLlFByaZjXyRjh8n_o2JwrWHsrC8kQlstZaLPtTpExv6PHWtNr4fXHX2Albxtr_CHqRO-wY2VOzVftHx6FDDVXmSDY18eBrfgBxsjrWw6cCdwI7D_5vn3E3WtKu5ORP4iibvE3QPyVbnp2A8&amp;name=3-additive&amp;view=run"
 class="fcbtn" target="_blank">Open in faustcode</a></p>
 </div>
 </div>
@@ -964,12 +964,12 @@ slider value</li>
   hslider(&quot;lfo&quot;, 3, 0.1, 20, 0.1));
 
 process = [&quot;freq&quot;:*(lfo)
-             -&gt; synth.process]
-        : echo.process;</code></pre>
+             -&gt; synth.out]
+        : echo.out;</code></pre>
 </div><div class="column">
 <p><img src="is2/qr-4-modulation.png" class="qr" /></p>
 <p><a
-href="https://orlarey.github.io/faustcode/?code=bZDBTsQgEIbvPMWkJ6hdQmt6cBv3IfRoPNAypI1tWQE1G6PP7kDVXRMPTGbgn_l-ZlqOzkdehGisfglRzlNfiI6xcFrjCLeA6-vk3brgGuGdAViPz3Q9hnky6HmR6qKCplEVtHRqpVKkEQBH7wYMgeQuyKDfonNx5KlDQAlKNh37IBQOo_uHZOCSY3DWJwJRV0uREClXG8j2fywhml4PT1m9iZW8aS_0Z2NX8AncoMzj-aLl_V0FpsxJMml7sZmcbfJYUwPNLOk_Lgz8F0mvRLtOCPLVZGItqPVMethWtS85iQXsDpBXLL8Vj7CHtIifumNf&amp;name=4-modulation&amp;view=run"
+href="https://orlarey.github.io/faustcode/?code=bZDBTsQgEIbvPMWkJ6iV0Joe3EYfQo_GAy1D2mxbVmA1G6PP7gCJWRMPkAH--b-fWbaT85FXIRqrzyHKdRkrMTAWLnuc4QFwf1-82zfcI3wyAOvxja7nsC4GPa_SuWqg61QDPa1WqbSTBYA7R5K6IIP-iM7FmSe1gBqU7Ab2RRicZvcPxcA1w-CqLwShrp52sk-1KhA7_omDaEY9HbO6iJW876_0JdQNfAM3KLM137R8fmrA1LlIAe0oSsDVpnwtNZBfTX9xYeK_OHol0l2yp0xdprWCWk_eTRgCtb6UER1qTmIBt4-QRyspxyscIA0g1QP7AQ&amp;name=4-modulation&amp;view=run"
 class="fcbtn" target="_blank">Open in faustcode</a></p>
 </div>
 </div>
