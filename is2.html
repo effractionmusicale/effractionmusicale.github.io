@@ -558,6 +558,32 @@ returned and assembled. Above, an abstraction and an application written
 in Faust.</p>
 </div>
 </section>
+<section id="unit-generators-max-mathews-music-iii-1960" class="level2">
+<h2>Unit generators (Max Mathews, Music III, 1960)</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img src="is2/max-mathews.jpg" /></p>
+<p>Photo: vonguard (cropped), CC BY-SA 2.0</p>
+</div><div class="column" style="width:70%;">
+<ul>
+<li>Bell Labs, with Joan Miller: <em>An Acoustic Compiler for Music and
+Psychological Stimuli</em>, 1961</li>
+<li><strong>Unit generators</strong>: oscillators, adders, envelopes…
+connected to build <strong>instruments</strong>, played by a score</li>
+<li>Model for Music V, Csound, SuperCollider…, four years before Moog’s
+modules</li>
+</ul>
+<pre class="faust"><code>phasor(f) = f/ma.SR : (+ : ma.frac) ~ _;
+osc(f)    = sin(2*ma.PI*phasor(f));
+process   = osc(440) * 0.2;</code></pre>
+</div>
+</div>
+<div class="infaust">
+<p>In Music N, unit generators are primitives written in another
+language. In Faust, they are written in Faust: above, an oscillator
+built from a phasor, down to the sample.</p>
+</div>
+</section>
 <section id="the-unix-pipe-doug-mcilroy-1964" class="level2">
 <h2>The Unix pipe (Doug McIlroy, 1964)</h2>
 <div class="columns">
@@ -716,8 +742,8 @@ class="diagram" /></td>
 <h1>Composing programs</h1>
 <section id="composing-like-the-unix-pipe" class="level2">
 <h2>Composing like the Unix pipe</h2>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="kw">|</span> <span class="fu">grep</span> dsp <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="kw">|</span> <span class="fu">grep</span> dsp <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div>
 <ul>
 <li>Three independent programs, written without knowing each other</li>
 <li>They compose thanks to a uniform interface: a text stream</li>
