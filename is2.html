@@ -521,16 +521,19 @@ time, transform circuits. Examples later on.</p>
 <ul>
 <li>M. Schönfinkel, <em>Über die Bausteine der mathematischen
 Logik</em>, 1924; then H. B. Curry</li>
-<li>Idea: do away with <strong>variables</strong> altogether</li>
+<li>Idea: do away with <strong>variables</strong> altogether: the root
+of the <strong>point-free</strong> style</li>
 <li>Three combinators suffice:</li>
 </ul>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mspace width="0.167em"></mspace><mi>x</mi><mspace width="0.167em"></mspace><mi>y</mi><mspace width="0.167em"></mspace><mi>z</mi><mo>→</mo><mi>x</mi><mspace width="0.167em"></mspace><mi>z</mi><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mspace width="0.167em"></mspace><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="2.0em"></mspace><mi>K</mi><mspace width="0.167em"></mspace><mi>x</mi><mspace width="0.167em"></mspace><mi>y</mi><mo>→</mo><mi>x</mi><mspace width="2.0em"></mspace><mi>I</mi><mspace width="0.167em"></mspace><mi>x</mi><mo>→</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">S\,x\,y\,z \to x\,z\,(y\,z) \qquad K\,x\,y \to x \qquad I\,x \to x</annotation></semantics></math></p>
 </div>
 </div>
 <div class="infaust">
-<p><code>_</code> (identity), <code>!</code> (cut) and the composition
-operators are enough to assemble circuits <strong>without naming
+<p>Faust is point-free: <code>_</code> (identity), <code>!</code> (cut)
+and the composition operators assemble circuits <strong>without naming
 signals</strong>.</p>
+<pre class="faust"><code>mean = + : *(0.5);            // point-free
+mean(x, y) = (x + y) * 0.5;   // same circuit, with variables</code></pre>
 </div>
 </section>
 <section id="lambda-calculus-alonzo-church-1936" class="level2">
@@ -741,8 +744,8 @@ class="diagram" /></td>
 <h1>Composing programs</h1>
 <section id="composing-like-the-unix-pipe" class="level2">
 <h2>Composing like the Unix pipe</h2>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="kw">|</span> <span class="fu">grep</span> dsp <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="kw">|</span> <span class="fu">grep</span> dsp <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div>
 <ul>
 <li>Three independent programs, written without knowing each other</li>
 <li>They compose thanks to a uniform interface: a text stream</li>
