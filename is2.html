@@ -1021,7 +1021,7 @@ rendering, per-phase metrics, WAV</td>
 <td><strong>Faust</strong></td>
 <td>the notation: a complete model in
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>≈</mo><annotation encoding="application/x-tex">\approx</annotation></semantics></math>
-60 lines, checked by the compiler</td>
+100 lines, checked by the compiler</td>
 </tr>
 <tr class="even">
 <td><strong>Me</strong></td>
@@ -1046,26 +1046,61 @@ measurements say, and let me know when you need my ear.</p>
 </section>
 <section id="demo" class="level2">
 <h2>Demo</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
 <p>Live: Claude Code + faustcode</p>
+<p><em>Scan now: you will play it at the end</em></p>
+</div><div class="column" style="width:45%;">
+<p><img src="is2/qr-horn.png" class="qr" /></p>
+</div>
+</div>
 </section>
-<section id="what-ifc-2026-taught-us" class="level2">
-<h2>What IFC 2026 taught us</h2>
+<section id="what-the-rehearsal-taught-us" class="level2">
+<h2>What the rehearsal taught us</h2>
 <ul>
-<li><strong>The
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mn>0</mn></msub><annotation encoding="application/x-tex">f_0</annotation></semantics></math>
-trap</strong>: the 2nd harmonic dominates; “the strongest peak” gives
-262 Hz instead of 131 Hz</li>
-<li><strong>Measure by phase</strong> (attack / sustain / release): the
-“best” version had a 48 ms release against 907 ms for the target, a
-defect invisible in the sustain spectrum</li>
-<li><strong>Metrics agree with the ear</strong>: the numerical ranking
-of the versions matched my listening judgment</li>
-<li><strong>Refined additive or physical model?</strong> The refined
-additive model won: “different, but almost better”</li>
+<li><strong>The ear decides what to measure</strong>: “steps in the
+decay”, “more wind, less metallic”, “more blowing in the attack”; each
+remark became a new metric</li>
+<li><strong>Backtracking</strong>: v15–v19 made things worse; a
+comparison over the whole file sent the model back to v14</li>
+<li><strong>Faust blocks</strong>: the reverb was replaced five times by
+changing only <code>space</code></li>
+<li><strong>40 versions in one morning</strong>, each one measured,
+played and shareable</li>
 </ul>
-<p>Final version from IFC 2026: <a
-href="https://orlarey.github.io/faustcode/?code=pVbNbttGEL7rKQY-tPwTvaRESbabAApqwIfGQR33FAjCilxZ25BcZpdU0hyCPkQfoFdd0ofQm_RJOrNL2ZKDnmIYlDScb-bbmdlvV1aN0q13ZtpizTvTxqVcnflXg8H5Obz4jj_Cw6s383u4eXN3C9uEwb9__gXbKYSQK61F3kpVGygENBtuBHi8bXn-Hn4ALUqBFh9D2Cg_S_5QK9PKHHhXSLWsRKtlbpbblOJtDeRyVQq4tN4wBIPr4LKGYr_7ff83rFQN3ppFkIu61Wr_TyEiuLm9g5yX-53xYfgSKdVG6O1-d4hxd_3L9fztNSCgwbedbjEBjGeVoYQXbFr1aSNoMKyA4eginjk0kMswYXEKxatzQ_H7NcH87R2k8Wj4chRnBkuh97ut0CsBYanqh04c0s_v7-e__nYNDTfAjRGfYaVlWfLa0tCqLNV6DaNkklCucTYdR4fcT6uEGbOvE5akRGKlsIq4Il4b2SqpBRQ_cvnQwZckY5X57pYP1swygBewMaUshPbO3rEFWr21qgteITNeCv9dV8v28ubz4iyCZMTiWQQTbM-I4YPFCU5foeVWPAuULKwVMeM4QyD-pwd_02jBi1P_dOGsLhtVxVDCCWIoF0EzhK7Qp92cQkcLZz0jJ5amFoLtzOxvRjBTqo_z16ew8cJZLSyZ9KixBSU95ubzKSZbOOtxTbKY2fWlRyTlw6adnyAnC7djXtl34O13eclP2utbIpnlkTyywFG8f96k6aIfUEfDFmpkkfSYHMr8QLvqGXS2IKvNNDvJhHNqZGwqpa4GH0X7zWBcYE6affCQ8v5rjUKASuQ4j9P_DfXAW-FCrbq2VTVNBluQ1coWrxqD7zwWTxKaktjWcDS1o5KO7ZKSzDXyws2bM6YJiwbQ_5GPSz6zi2duXtjYffT4jD3NB9KcHOMZm_XDcvLhjAlDqrdIM01wKrqKGmsJh8g3tHRDyza0ZEPLNbRUQ8u0T2RfJ6GlGVqWoSUZWo72ab-nFA4JPsGQiX1mR09rSRgWsWtsgRv10UupgOB20nmSMnSh_VmfOgx7h3TcO2yVzIVXdWXrox8u0ZMR3Eaw4nHL3wtPhlhe6pUPASgTK5N7ZPSDNQssDINgdwX10gXD0viomO5H1zx9L2rfh3PwRjELqJj96SXqrShV05Bg0k750AnQvJGk_ocTosEdEz1qPS9JhPc7MUAsJhZ1zI3GUUqm_STR3omAhu2bJM9ktU94CbJqutLgWQcfOklHUo7i_LVFCvqgu-h8_ZiQ8jEnbNlTKhKJ16pAH-SBK3dCE_SVcxKCflxqdKlVXCtpKPtaxiteF3iMGC8lxcRFpBljtKWWgVO5ABdBKXjrfaJuVdSjeuNZuQ0-UW1PTKRHqvjDToBnexQCJra7FAXIJi3yVany90K7n8jvQGGMM9QXr1es42rlCu8jxh5zBBDDDe_Qo6M7Q2Mid4RRhxB-VHE6WcDToi6gfIzWlJ05OjbJhLeEvvV-r6mkI7QYS3ODlsdSZZan2fBGFAevEHpUAAdJDqBvX4CtyaiOeFnIaW57aACH5gU0Lvhk8YUrQH_673ea023IMXYXgSdVLJwwwpfHS4S9d_iDXj5foD2uVK2Way2sCSfoIj1If2xbPsKlVPKTsGdkz_CnS_CWgZcMUZ192k6eixjQ76tBo1UuDImpAwZg5Z96hJfESrZCL5NkOlnejZeUnuIto-XV4D8&amp;name=boat_horn_v10&amp;view=run"
-class="fcbtn" target="_blank">Open in faustcode</a></p>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p>Full story, with every version to hear and open:<br />
+<a
+href="https://effractionmusicale.fr/foghorn">effractionmusicale.fr/foghorn</a></p>
+</div><div class="column" style="width:35%;">
+<p><img src="is2/qr-foghorn.png" class="qr" /></p>
+</div>
+</div>
+<div class="notes">
+<p>IFC 2026: the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mn>0</mn></msub><annotation encoding="application/x-tex">f_0</annotation></semantics></math>
+trap (H2 dominates: 262 Hz instead of 131 Hz); measure by phase (a 48 ms
+release against 907 ms, invisible in the sustain spectrum); metrics
+agreed with the ear; the refined additive model won (“different, but
+almost better”). Plan B: demo-ia/planB/boat_horn_v10.dsp.</p>
+</div>
+</section>
+<section id="your-turn-the-harbour-of-cannes" class="level2">
+<h2>Your turn: the harbour of Cannes</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Hold <strong>gate</strong> to blow</li>
+<li>Tilt your phone to change the pitch</li>
+<li>Everyone together: a whole harbour in the fog</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="is2/qr-horn.png" class="qr" /></p>
+<p><a
+href="https://effractionmusicale.fr/horn">effractionmusicale.fr/horn</a></p>
+</div>
+</div>
 </section>
 </section>
 <section id="conclusion" class="level1">
