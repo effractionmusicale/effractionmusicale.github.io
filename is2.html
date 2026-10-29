@@ -557,34 +557,6 @@ returned and assembled. Above, an abstraction and an application written
 in Faust.</p>
 </div>
 </section>
-<section id="blodi-kelly-lochbaum-vyssotsky-c.-1960" class="level2">
-<h2>BLODI (Kelly, Lochbaum, Vyssotsky, c. 1960)</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<p><img src="is2/blodi-fig1.png" /></p>
-<p>Fig. 1 of <em>A Block Diagram Compiler</em>, Bell System Technical
-Journal 40(3), May 1961</p>
-</div><div class="column" style="width:55%;">
-<ul>
-<li>A <em>block diagram compiler</em>, Bell Labs: same issue as
-Mathews’s paper</li>
-<li><em>“Corresponds closely to an engineer’s block diagram”</em>: ~30
-box types, wired on punched cards</li>
-<li>Sampled signals; loops without delay rejected</li>
-</ul>
-</div>
-</div>
-<div class="infaust">
-<p>The same circuit (without the printer): the delay box
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
-is the <code>~</code> operator itself, so a loop without delay cannot be
-written.</p>
-<pre class="faust"><code>h       = (.001,.002,.004,.008,.016,.032,
-           .063,1/8,.230,1/4,1/5,.057);
-loop    = (ro.cross(2) : - : +(no.noise) : fi.fir(h)) ~ _;
-process = loop : mem : *(2) : max(0);</code></pre>
-</div>
-</section>
 <section id="unit-generators-max-mathews-music-iii-1960" class="level2">
 <h2>Unit generators (Max Mathews, Music III, 1960)</h2>
 <div class="columns">
@@ -769,8 +741,8 @@ class="diagram" /></td>
 <h1>Composing programs</h1>
 <section id="composing-like-the-unix-pipe" class="level2">
 <h2>Composing like the Unix pipe</h2>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="kw">|</span> <span class="fu">grep</span> dsp <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="kw">|</span> <span class="fu">grep</span> dsp <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div>
 <ul>
 <li>Three independent programs, written without knowing each other</li>
 <li>They compose thanks to a uniform interface: a text stream</li>
