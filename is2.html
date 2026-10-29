@@ -557,32 +557,6 @@ returned and assembled. Above, an abstraction and an application written
 in Faust.</p>
 </div>
 </section>
-<section id="unit-generators-max-mathews-music-iii-1960" class="level2">
-<h2>Unit generators (Max Mathews, Music III, 1960)</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img src="is2/max-mathews.jpg" /></p>
-<p>Photo: vonguard (cropped), CC BY-SA 2.0</p>
-</div><div class="column" style="width:70%;">
-<ul>
-<li>Bell Labs, with Joan Miller: <em>An Acoustic Compiler for Music and
-Psychological Stimuli</em>, 1961</li>
-<li><strong>Unit generators</strong>: oscillators, adders, envelopes…
-connected to build <strong>instruments</strong></li>
-<li>Model for Music V, Csound, SuperCollider…, four years before Moog’s
-modules</li>
-</ul>
-<pre class="faust"><code>phasor(f) = f/ma.SR : (+ : ma.frac) ~ _;
-osc(f)    = sin(2*ma.PI*phasor(f));
-process   = osc(440) * 0.2;</code></pre>
-</div>
-</div>
-<div class="infaust">
-<p>In Music N, unit generators are primitives written in another
-language. In Faust, they are written in Faust: above, an oscillator
-built from a phasor, down to the sample.</p>
-</div>
-</section>
 <section id="a-block-diagram-compiler-kelly-lochbaum-vyssotsky-1961"
 class="level2">
 <h2>A block diagram compiler (Kelly, Lochbaum, Vyssotsky, 1961)</h2>
@@ -609,6 +583,32 @@ written.</p>
            .063,1/8,.230,1/4,1/5,.057);
 loop    = (ro.cross(2) : - : +(no.noise) : fi.fir(h)) ~ _;
 process = loop : mem : *(2) : max(0);</code></pre>
+</div>
+</section>
+<section id="unit-generators-max-mathews-music-iii-1960" class="level2">
+<h2>Unit generators (Max Mathews, Music III, 1960)</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img src="is2/max-mathews.jpg" /></p>
+<p>Photo: vonguard (cropped), CC BY-SA 2.0</p>
+</div><div class="column" style="width:70%;">
+<ul>
+<li>Bell Labs, with Joan Miller: <em>An Acoustic Compiler for Music and
+Psychological Stimuli</em>, 1961</li>
+<li><strong>Unit generators</strong>: oscillators, adders, envelopes…
+connected to build <strong>instruments</strong></li>
+<li>Model for Music V, Csound, SuperCollider…, four years before Moog’s
+modules</li>
+</ul>
+<pre class="faust"><code>phasor(f) = f/ma.SR : (+ : ma.frac) ~ _;
+osc(f)    = sin(2*ma.PI*phasor(f));
+process   = osc(440) * 0.2;</code></pre>
+</div>
+</div>
+<div class="infaust">
+<p>In Music N, unit generators are primitives written in another
+language. In Faust, they are written in Faust: above, an oscillator
+built from a phasor, down to the sample.</p>
 </div>
 </section>
 <section id="the-unix-pipe-doug-mcilroy-1964" class="level2">
